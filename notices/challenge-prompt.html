@@ -23,21 +23,16 @@
             --white: #FFF;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             font-family: 'Oswald', sans-serif;
-            font-weight: 400;
             background-color: var(--grey);
             color: var(--white);
             min-height: 100vh;
             font-size: var(--base-pixel-size);
             display: flex;
             flex-direction: column;
+            margin: 0;
+            padding: 0;
         }
 
         .header {
@@ -63,15 +58,6 @@
             text-align: center;
         }
 
-        .captcha-container {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            padding: calc(var(--base-pixel-size) * 3);
-            margin-top: calc(var(--base-pixel-size) * 2);
-            max-width: 400px;
-            width: 100%;
-        }
-
         h1 {
             font-size: var(--font-size-7);
             font-weight: 700;
@@ -84,6 +70,20 @@
             color: var(--white);
             line-height: 1.5;
             margin-bottom: calc(var(--base-pixel-size) * 2);
+        }
+
+        .captcha-wrapper {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: calc(var(--base-pixel-size) * 3);
+            margin-top: calc(var(--base-pixel-size) * 2);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        /* Ensure CAPTCHA content is visible */
+        .captcha-wrapper * {
+            color: var(--white);
         }
 
         @media (max-width: 768px) {
@@ -116,8 +116,8 @@
 
     <main class="content">
         <h1>Verify You're Human</h1>
-        <p>To ensure the security of our service, please complete the CAPTCHA below.</p>
-        <div class="captcha-container">
+        <p>To ensure the security of our service, please complete the verification below.</p>
+        <div class="captcha-wrapper">
             ::CAPTCHA_BOX::
         </div>
     </main>
