@@ -1,66 +1,110 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ContentLTD</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --font-size-1: 0.75rem;
+            --font-size-2: 0.75rem;
+            --font-size-3: 1rem;
+            --font-size-4: 1.25rem;
+            --font-size-5: 1.5rem;
+            --font-size-6: 2rem;
+            --font-size-7: 2.5rem;
+            --font-size-8: 3rem;
+            --font-size-9: 4rem;
+            --font-size-10: 5rem;
+            --base-pixel-size: 12px;
+            --grey: #111;
+            --yellow-action: #ffbb00;
+            --white: #FFF;
+        }
 
-<link rel="stylesheet" href="https://contentltd.net/notices/region-gov.css"></head><body><header class="header">
-         <a href="https://contentltd.net"><div class="logo">
-               <img src="https://imagedelivery.net/kGAxGmhovFjft44aAIlSSQ/46872de2-6e5c-4f73-a1c7-77a96dee6b00/public" alt="Descriptive Alt Text"></div></a>
-         
- 
-         
-     </header>
- 
-     <div class="warn"></div><!-- Main Content -->
-                         
- 
-     <div class="err"><h1>ContentLTD is unavailable in your region.</h1><br>
-    <p>This service is not currently accessible in your area. Try again later.
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 400;
+            background-color: var(--grey);
+            color: var(--white);
+            min-height: 100vh;
+            font-size: var(--base-pixel-size);
+        }
 
+        .header {
+            display: flex;
+            align-items: center;
+            padding: calc(var(--base-pixel-size) * 1.5) calc(var(--base-pixel-size) * 4);
+            background-color: rgba(0,0,0,.85);
+            backdrop-filter: blur(25px);
+        }
 
+        .logo img {
+            height: 20px; /* Reduced to exactly 20px */
+            width: auto;
+        }
 
+        .content {
+            padding: calc(var(--base-pixel-size) * 4);
+        }
 
+        .err {
+            max-width: calc(var(--base-pixel-size) * 66);
+        }
 
+        h1 {
+            font-size: var(--font-size-7);
+            font-weight: 700;
+            margin-bottom: calc(var(--base-pixel-size) * 1.5);
+            line-height: 1.2;
+        }
 
-    </p><br>
- 
- 
- 
- 
- 
- 
- 
- </div>
- 
- 
+        p {
+            font-size: var(--font-size-4);
+            color: var(--white);
+            line-height: 1.5;
+        }
 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+        @media (max-width: 768px) {
+            .header {
+                padding: var(--base-pixel-size) calc(var(--base-pixel-size) * 2);
+            }
 
+            .content {
+                padding: calc(var(--base-pixel-size) * 2);
+            }
 
+            h1 {
+                font-size: var(--font-size-6);
+            }
 
+            p {
+                font-size: var(--font-size-3);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="#">
+            <div class="logo">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/channels4_profile.jpg-ZlwdeQVfsFMwYSD1GUI2dN6X5uKkOB.jpeg" alt="ContentLTD Logo">
+            </div>
+        </a>
+    </header>
 
-
-
-</body></html>
+    <main class="content">
+        <div class="err">
+            <h1>ContentLTD is unavailable in your region.</h1>
+            <p>This service is not currently accessible in your area. Try again later.</p>
+        </div>
+    </main>
+</body>
+</html>
