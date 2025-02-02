@@ -81,9 +81,25 @@
             width: 100%;
         }
 
-        /* Ensure CAPTCHA content is visible */
         .captcha-wrapper * {
             color: var(--white);
+        }
+
+        .captcha-wrapper .footer {
+            background-color: transparent;
+            padding: calc(var(--base-pixel-size) * 1.5) 0 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: calc(var(--base-pixel-size) * 1.5);
+            font-size: var(--font-size-1);
+        }
+
+        .captcha-wrapper .footer a {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        .captcha-wrapper .footer a:hover {
+            color: var(--yellow-action);
         }
 
         @media (max-width: 768px) {
@@ -109,7 +125,7 @@
     <header class="header">
         <a href="#">
             <div class="logo">
-                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/channels4_profile.jpg-ZlwdeQVfsFMwYSD1GUI2dN6X5uKkOB.jpeg" alt="ContentLTD Logo">
+                <img src="https://imagedelivery.net/kGAxGmhovFjft44aAIlSSQ/46872de2-6e5c-4f73-a1c7-77a96dee6b00/public" alt="ContentLTD Logo">
             </div>
         </a>
     </header>
@@ -117,9 +133,8 @@
     <main class="content">
         <h1>Verify You're Human</h1>
         <p>To ensure the security of our service, please complete the verification below.</p>
-        <div class="captcha-wrapper">
-            ::CAPTCHA_BOX::
-        </div>
+        ::CAPTCHA_BOX::
     </main>
 </body>
 </html>
+
