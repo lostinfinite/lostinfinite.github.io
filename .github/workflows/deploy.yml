@@ -1,0 +1,36 @@
+name: Deploy WebKit Website to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Change to the branch where WebKit's site is stored
+  workflow_dispatch: # Allows manual trigger
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y wget curl jq
+
+      - name: Build Static Site
+        run: |
+          mkdir -p static_site
+          cp -r Assets static_site/  # Adjust for your WebKit assets
+          
+          # Example: Convert dynamic JS-heavy pages into pre-rendered static HTML
+          wget --mirror --convert-links --adjust-extension --page-requisites --no-parent https://your-webkit-site.com -P static_site/
+          
+          # If WebKit uses a build process, add it here
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: static_site
