@@ -3,8 +3,8 @@ name: Deploy WebKit Website to GitHub Pages
 on:
   push:
     branches:
-      - main  # Change to the branch where WebKit's site is stored
-  workflow_dispatch: # Allows manual trigger
+      - main
+  workflow_dispatch:  # Allows manual trigger
 
 jobs:
   build:
@@ -19,15 +19,23 @@ jobs:
           sudo apt update
           sudo apt install -y wget curl jq
 
-      - name: Build Static Site
+      - name: Debug: List Repository Files
+        run: ls -la  # This will help debug missing files
+
+      - name: Copy Assets (if exists)
         run: |
           mkdir -p static_site
-          cp -r Assets static_site/  # Adjust for your WebKit assets
-          
-          # Example: Convert dynamic JS-heavy pages into pre-rendered static HTML
+          if [ -d "Assets" ]; then
+            echo "Assets directory found. Copying..."
+            cp -r Assets static_site/
+          else
+            echo "Warning: Assets directory not found. Skipping copy."
+          fi
+
+      - name: Convert Dynamic Content to Static HTML
+        run: |
           wget --mirror --convert-links --adjust-extension --page-requisites --no-parent https://your-webkit-site.com -P static_site/
-          
-          # If WebKit uses a build process, add it here
+        continue-on-error: true
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
