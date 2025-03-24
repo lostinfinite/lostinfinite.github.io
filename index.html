@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html><head>
+    <title>ContentLTD</title>
+    <link href="https://cdn.contentltd.net/cltd.jpg" rel="icon">
+
+
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+  const header = document.querySelector('.header');
+  const featuresAll = document.querySelector('.features-all');
+
+  // Set up the IntersectionObserver
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // The header has passed over the features-all section, apply styles
+        header.classList.add('white-bg');
+        console.log("Header has passed over features-all");
+      } else {
+        // The header is not over the features-all section, remove styles
+        header.classList.remove('white-bg');
+        console.log("Header is not over features-all");
+      }
+    });
+  }, {
+    // Set up the observer to track when .features-all is in the viewport
+    threshold: 0.01 // This means the whole .features-all element has to be in view
+  });
+
+  // Start observing the .features-all element
+  observer.observe(featuresAll);
+});
+
+
+
+function toggleMenu() {
+  const mobileNav = document.querySelector('.mobile-nav');
+  mobileNav.classList.toggle('active'); // Toggle the 'active' class to show/hide the menu
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Select all dropdown headers
+  const dropdowns = document.querySelectorAll('.dropdown');
+
+  dropdowns.forEach(dropdown => {
+    dropdown.addEventListener('click', () => {
+      const content = dropdown.nextElementSibling;
+      const imgDropdown = dropdown.querySelector('.img-dropdown');
+      const imgUnexpand = dropdown.querySelector('.img-unexpand');
+
+      // Toggle the display of the dropdown content
+      if (content.style.display === "block") {
+        content.style.display = "none";
+        imgDropdown.style.display = "inline-block";
+        imgUnexpand.style.display = "none";
+      } else {
+        content.style.display = "block";
+        imgDropdown.style.display = "none";
+        imgUnexpand.style.display = "inline-block";
+      }
+    });
+
+    // Ensure initial state
+    const content = dropdown.nextElementSibling;
+    const imgDropdown = dropdown.querySelector('.img-dropdown');
+    const imgUnexpand = dropdown.querySelector('.img-unexpand');
+
+    if (content.style.display === "block") {
+      imgDropdown.style.display = "none";
+      imgUnexpand.style.display = "inline-block";
+    } else {
+      imgDropdown.style.display = "inline-block";
+      imgUnexpand.style.display = "none";
+    }
+  });
+});
+
+    </script>
+    <style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+:root {
+    --light-mode-header: rgba(102, 102, 102, 0.5);
+    --main-bg: #1d1d1d;
+    --bg-accent: #000;
+    --text-main: #fff;
+    --cta-accent: #FFBB00;
+    --accent-var1: #FFBB00;
+    --cta-main-text: #000;
+    --heading-font: "Open Sans", sans-serif;
+    --main-font: "Open Sans", sans-serif;
+    --heading-font-weight: 300;
+    --main-font-weight: 400;
+    --heading-font-size: 2.5em;
+    --main-font-size: 1.2em;
+    --default-align: center;
+    --default-padding: 10px;
+    --default-align-left: left;
+    --default-align-right: right;
+    --text-size-secondary: 1em;
+    --disclaimer-size: 0.5em;
+    --text-size-smaller: 0.75em;
+    --text-size-smallest-readable: 0.60em;
+}
+
+
+
+    .p-ft2{
+        font-size: var(--text-size-smaller);
+    }
+
+        body {
+            background-color: #1d1d1d;
+            color: white;
+            font-family: Open Sans, sans-serif;
+            margin: 0;
+            min-width: 320px;
+            overflow-x: hidden;
+            z-index: 0; /* Keeps it above other content */
+
+        }
+        
+        body a {
+            color: #fff;
+        }
+        
+        
+
+        h1 {
+    font-family: var(--heading-font);
+    font-weight: 100;
+    font-size: var(--heading-font-size);
+    color: var(--text-main);
+    text-align: var(--default-align);
+    font-variation-settings: "wght" 100;
+}
+        p {
+    font-family: var(--main-font);
+    font-weight: var(--main-font-weight);
+    font-size: var(--main-font-size);
+    color: var(--text-main);
+    text-align: var(--default-align);
+    padding: var(--default-padding);
+}
+
+        .ctr-1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .headera:hover {
+            color: var(--cta-accent);
+        }
+
+
+
+.ft2-img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Default Header Style */
+
+.header {
+  height: 45px;
+  background: rgba(0,0,0,0.7);
+  padding: 15px;
+  position: sticky;
+  display: flex;
+  z-index: 1000;
+  top: 0px;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 1s, color 1s;
+}
+
+.headera {
+  color: white; /* White text by default */
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+/* New Styles for when the header scrolls over features-all */
+.header.white-bg {
+  background-color: var(--light-mode-header); /* Use the --light-mode-header variable */
+  color: black; /* Black text when header is in white-bg state */
+}
+
+.header.white-bg .headera {
+  color: black;
+  text-decoration: underline; /* Black underline for links */
+}
+
+
+.header img {
+  height: 100%;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.headera {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+/* Hamburger menu (mobile) */
+.hamburger {
+  display: none; /* Hidden by default */
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Mobile Navigation Links (hidden by default) */
+.mobile-nav {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(171, 171, 171, 0.9);
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.mobile-nav a {
+  display: block;
+  color: black;
+  margin: 20px 0;
+  text-decoration: none;
+}
+
+/* Show hamburger icon and mobile nav on small screens */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Show hamburger on mobile */
+  }
+
+  .nav-links {
+    display: none; /* Hide desktop links on mobile */
+  }
+
+  .mobile-nav.active {
+    display: block; /* Show mobile menu when active */
+  }
+}
+
+
+
+/* Hover effect for links */
+.headera:hover {
+  color: var(--cta-accent);
+}
+
+/* New styles for the white background when scrolling */
+.header.white-bg {
+  background-color: white;
+  color: black;
+}
+
+.header.white-bg .headera {
+  color: black;
+  text-decoration: underline;
+}
+
+.headera {
+  color: white;
+  text-decoration: none;
+  transition: color 1s, text-decoration 1s;
+}
+.p2-1 {
+    font-size: var(--text-size-secondary);
+    text-align: var(--default-align);
+    width: 100%;
+    display: inline-block; /* Add this */
+}
+
+disclaimer {
+    font-size: var(--disclaimer-size);
+    margin-top: 20px;
+    display: inline-block; /* Add this to ensure it stays inline */
+    vertical-align: middle; /* Ensures both align vertically */
+}
+
+
+.hero {
+  background-color: #000;
+    display: flex;
+    justify-content: center; /* Center-aligns the elements horizontally */
+    align-items: center; /* Vertically aligns the elements */
+}
+
+.end-hero {
+  background-color: #000;
+  border-radius: 3% 3% 0 0 !important;
+  overflow: hidden; /* Ensures content inside doesn't break the border-radius */
+}
+
+
+.hero-img { 
+    width: 50%;
+    border-radius: 5px;
+    margin: 0 auto; /* Centers the image horizontally */
+    display: block; /* Makes the image a block element to apply margin */
+    text-align: var(--default-align); /* This can be used for inner text, if needed */
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+button {
+    background-color: var(--cta-accent);
+    color: var(--cta-main-text);
+    border: solid 2px var(--cta-accent);
+    border-radius: 5px; /* Increased the border-radius for a more rounded button */
+    padding: 10px 20px;
+    font-size: var(--main-font-size);
+    font-family: var(--main-font);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+    margin-left: auto; /* Centers the button horizontally */
+    margin-right: auto; /* Centers the button horizontally */
+    display: block; /* Ensures the button is a block-level element for centering */
+    text-align: center; /* Centers text inside the button */
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: var(--accent-var1);
+}
+
+button:active {
+    background-color: var(--cta-accent);
+    transform: scale(0.95); /* Slightly shrinks the button on click */
+}
+
+
+        @media (max-width: 768px) {
+            .hero-img {
+                width: 100%; /* Adjusts image size for smaller screens */
+            }
+            h1 {
+                font-size: 2em; /* Adjusts heading size for smaller screens */
+            }
+        }
+
+        .p-and-s {
+    display: flex; /* Enables flexbox */
+    justify-content: space-between; /* Aligns the child elements (Problem and Solution) on opposite sides */
+    align-items: flex-start; /* Aligns them to the top, you can change this to 'center' or 'flex-end' if needed */
+}
+
+.Problem, .Solution {
+    width: 48%; /* Optional: Sets the width of each div, leaving a little space between them */
+}
+
+.hr-a {
+    border: 1px dashed #FFF;
+}
+
+.hr-b1 {
+    height: 10px;
+    background: linear-gradient(to bottom, #1d1d1d, #000);
+    border: none;
+    width: 100%;
+    margin-bottom: 0; /* Removes space between .hr-b1 and .features */
+}
+
+.hr-b2 {
+    height: 10px;
+    background: linear-gradient(to bottom, #000, #1d1d1d);
+    border: none;
+    width: 100%;
+    margin-top: 0; /* Removes space between .hr-b1 and .features */
+}
+
+.features {
+    display: flex; /* Enables flexbox */
+    justify-content: center; /* Centers the feature-a div */
+    width: 100%;
+    background-color: #000;
+    padding: 20px;
+    border-radius: 0 0 0px 0px; /* Only applies border-radius to the bottom */
+    margin-top: 0; /* Ensures no gap between .hr-b1 and .features */
+}
+
+
+.feature-a {
+    display: flex; /* Enables flexbox inside this section */
+    justify-content: space-between; /* Pushes left1 to the left and right1 to the right */
+    align-items: center; /* Aligns items in the center vertically */
+    width: 100%; /* Ensures it takes the full width */
+    max-width: 1200px; /* Optional: Restricts max width for better layout */
+}
+
+.left1, .right1 {
+    width: 50%; /* Makes both sections take up equal space */
+}
+
+.right1 {
+    display: flex;
+    justify-content: flex-end; /* Pushes image to the right */
+}
+
+.right1 img {
+    width: 80%; /* Ensures the image is responsive */
+    max-width: 400px; /* Optional: Limits the image size */
+    border-radius: 5px; /* Rounds the corners */
+  transition: box-shadow 0.3s ease-in-out;
+
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.right1 img:hover {
+  box-shadow: 0px 0px 20px rgba(155, 155, 155, 0.5);
+}
+
+
+.left2, .right1 {
+    width: 50%; /* Makes both sections take up equal space */
+}
+
+.left2 {
+    display: flex;
+    justify-content: flex-end; /* Pushes image to the right */
+}
+
+.left2 img {
+    width: 80%; /* Ensures the image is responsive */
+    max-width: 400px; /* Optional: Limits the image size */
+    border-radius: 5px; /* Rounds the corners */
+  transition: box-shadow 0.3s ease-in-out;
+
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.left2 img:hover {
+  box-shadow: 0px 0px 20px rgba(155, 155, 155, 0.5);
+}
+
+/* Pricing Section */
+/* Pricing Section */
+.pricing {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px; /* Adds space between the cards */
+  flex-wrap: wrap; /* Ensures responsiveness */
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Pricing Cards */
+.card {
+  background: #000;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 400px;
+  width: 100%; /* Ensures responsiveness */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #FFF;
+  text-align: center;
+  flex: 1; /* Allows flexible resizing */
+  min-width: 300px; /* Prevents cards from shrinking too much */
+}
+
+/* Popular Card */
+.card-popular {
+  border: 2px solid #ff9900;
+  box-shadow: 0 6px 15px rgba(255, 153, 0, 0.2);
+}
+
+
+.pricing h1 {
+  font-size: 2rem;
+  color: #FFF;
+  margin-bottom: 20px;
+}
+
+
+.card h2 {
+  font-size: 1.5rem;
+  color: #FFF;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #FFF;
+  margin: 10px 0;
+}
+
+.price span {
+  font-size: 0.9rem;
+  color: #FFF;
+}
+
+
+
+/* List */
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.card ul li {
+  padding: 5px 0;
+  font-size: 1rem;
+  color: #FFF;
+}
+
+/* Buttons */
+.pricing-btn {
+  background-color: #FFBB00;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.pricing-btn:hover {
+  background-color: #FFBB00;
+}
+
+.prefered-tag {
+  background-color: blue;
+  color: #FFF;
+  border-radius: 20px; /* Use a rounded rectangle shape */
+  padding: 5px 10px; /* Adds spacing inside */
+  font-size: 14px;
+  font-weight: bold;
+  display: inline-block; /* Keeps it inline */
+  text-align: center;
+}
+
+.img-dropdown, .img-unexpand {
+    height: 2rem;
+    line-height: 1;
+    margin-right: 4px;
+    position: relative;
+    top: 2px;
+
+}
+
+.faq-q, .img-dropdown, .img-unexpand{
+  display: inline-block;
+}
+
+.faq-q {
+  cursor: pointer;
+}
+.faq-body {
+  padding: 8.0875em;
+}
+    </style>
+    
+</head>
+
+
+
+<body>
+    <div class="header">
+        <img src="https://cdn.contentltd.net/cltd.jpg" alt="Logo">
+        
+        <!-- Hamburger icon for mobile view -->
+        <div class="hamburger" onclick="toggleMenu()">
+          &#9776; <!-- This is the hamburger icon -->
+        </div>
+        
+        <!-- Desktop Navigation Links (visible on larger screens) -->
+        <div class="nav-links">
+          <a href="./index.html" class="headera">Home</a>
+          <a href="./about.html" class="headera">About</a>
+          <a href="mailto:info@contentltd.net" class="headera">Contact</a>
+          <a href="./servers.html" class="headera">Our Servers</a>
+        </div>
+        
+        <!-- Mobile Navigation Links (hidden by default, shown when hamburger clicked) -->
+        <div class="mobile-nav">
+          <a href="./index.html" class="headera">Home</a>
+          <a href="./about.html" class="headera">About</a>
+          <a href="mailto:info@contentltd.net" class="headera">Contact</a>
+          <a href="./servers.html" class="headera">Our Servers</a>
+        </div>
+      </div>
+      
+<div class="hero-overall" style="  background-color: #000; border-radius: 0 0 3% 3%; padding: 5px;">
+<h1 class="ctr-1">Welcome to ContentLTD</h1>
+<div class="hero">
+<p class="p2-1" >The number one ER;LC Server management agency with the best on-market Anti-Raid protection</p><disclaimer>1</disclaimer>
+</div>
+<button onclick="location.href='https://discord.gg/MtWakXj9Cm'">Join Us</button>
+<img class="hero-img" src="example-1.png">
+</div>
+<br>
+<br>
+
+<br>
+<br>
+<div class="p-and-s">
+    <div class="Problem">
+        <h1>Whats the problem?</h1>
+        <p>Between Raiding and corruption I cannot tell you which one i've seen more of.</p>
+    </div>
+    <div class="Solution">
+        <h1 >How would we solve it?</h1>
+        <p>We provide Management services and Anti-Raid Services to any ER;LC owner who asks.</p>
+    </div>
+</div>
+<br>
+<br>
+<hr class="hr-b1">
+
+<div class="features">
+<div class="feature-a">
+    <div class="left1">
+<h1>Our Anti-Raid Bot</h1>
+
+<p>We offer Industry-Leading Anti-Raid services via out "Content Solutions" Bot!</p><disclaimer>1</disclaimer>
+<button onclick="scrollToPricing()">Go to Pricing</button>
+
+<script>
+function scrollToPricing() {
+    let pricingElement = document.getElementById("pricing");
+    let offset = 50; // Adjust this value to scroll a bit above
+
+    window.scrollTo({
+        top: pricingElement.offsetTop - offset,
+        behavior: "smooth"
+    });
+}
+</script>
+
+    </div>
+    <div class="right1">
+<img alt="image of bot profile" src="example-2.png">
+
+    </div>
+
+
+
+</div>
+
+
+
+</div>
+<div class="features-all">
+<div class="features">
+    <div class="feature-a">
+        <div class="left2">
+            <img class="ft2-img" src="example3.png">        </div></div>
+        <div class="right2">
+
+    <h1>Our Banlist</h1>
+
+    <p class="p-ft2">We have a comprehensive banlist containing more then 140 diffrent discord accounts that are known for being trollers or raiders keeping them out before they even come in!</p>
+
+    <button onclick="scrollToPricing()">Go to Pricing</button>
+
+<script>
+function scrollToPricing() {
+    let pricingElement = document.getElementById("pricing");
+    let offset = 200; // Adjust this value to scroll a bit above
+
+    window.scrollTo({
+        top: pricingElement.offsetTop - offset,
+        behavior: "smooth"
+    });
+}
+</script>
+
+    
+    </div>
+    
+    
+    
+    </div>
+</div>
+<hr class="hr-b2">
+<h1>Pricing</h1>
+
+<div class="pricing" id="pricing">
+
+  <div class="card card-1">
+    <h2>One Time Payment</h2>
+    <p class="price">$100 / USD <span>(Excluding Tax)</span></p>
+    <ul>
+      <li>Anti-Raid Bot</li>
+    </ul>
+    <button class="pricing-btn" onclick="location.href='https://discord.gg/MtWakXj9Cm'">Open A Ticket <span class="external-icon"></span></button>
+    <p class="disclaimer">You are opening a "Pricing" ticket in our Discord Server.</p>
+  </div>
+
+  <div class="card card-popular">
+    <h2>Going under our brand</h2>
+    <div class="prefered-tag">Preferred</div>
+    <p class="price">Free <span>(You must have an "ER;LC" or other roleplay server. Open a ticket for more details.)</span></p>
+    
+    <ul>
+      <li>Anti-Raid Bot</li>
+      <li>Advertising Services</li>
+      <li>Server Management Services</li>
+      <li>Asset Protection</li>
+    </ul>
+    <button class="pricing-btn" onclick="location.href='https://discord.gg/MtWakXj9Cm'">Open A Ticket <span class="external-icon"></span></button>
+    <p class="disclaimer">You are opening a "Partnership" ticket in our Discord Server.</p>
+  </div>
+</div>
+<br>
+<div class="divider"></div>
+<div class="faq-body">
+<h1 id="faq">FAQ</h1>
+<div class="dropdown">
+  <img src="expand-yellow.png" class="img-dropdown" style="display: inline-block;">
+  <img src="unexpand-yellow.png" class="img-unexpand" style="display: none;">
+  <h2 class="faq-q">What ways of payment do you guys take?</h2>
+  </div>
+  <div class="dropdown-content" style="display: none;">
+    <p>We take Paypal and Cashapp for payment.</p>
+    </div>
+
+    <div class="dropdown">
+      <img src="expand-yellow.png" class="img-dropdown" style="display: inline-block;">
+      <img src="unexpand-yellow.png" class="img-unexpand" style="display: none;">
+      <h2 class="faq-q">What is the tax?</h2>
+      </div>
+      <div class="dropdown-content" style="display: none;">
+        <p>7%</p>
+        </div>
+
+        <div class="dropdown">
+          <img src="expand-yellow.png" class="img-dropdown" style="display: inline-block;">
+          <img src="unexpand-yellow.png" class="img-unexpand" style="display: none;">
+          <h2 class="faq-q">If I went under your brand, is it completely free?</h2>
+          </div>
+          <div class="dropdown-content" style="display: none;">
+            <p>Yes! It is completely free for as long as your server is under our brand.</p>
+            </div>
+            <p>This is the end of our FAQ. If you have other questions then please open a ticket <a href="https://discord.gg/MtWakXj9Cm">Here!</a></p>
+  </div>
+  <div class="hero-overall" style="  background-color: #000; border-radius: 0 0 3% 3%; padding: 5px;">
+    <h1 class="ctr-1">Anti-Raid for all!</h1>
+    <div class="end-hero">
+    <p class="p2-1" >Join us today to help us with our mission of providing the best anti-raid services on the market!</p>
+    <button onclick="location.href='https://discord.gg/MtWakXj9Cm'">Join Us</button>
+    </div>
+    <br>
+    <br>
+
+
+
+    <footer class="footer">
+      <div class="footer-container">
+          <div class="footer-column">
+              <h3>Help</h3>
+              <div class="divider"></div>
+              <ul class="footer-links">
+                  <li><a href="mailto:info@contentltd.net">Contact Us</a></li>
+                  <li><a href="./faq.html">FAQs</a></li>
+              </ul>
+          </div>
+          
+          <div class="footer-column">
+              <h3>About ContentLTD</h3>
+              <div class="divider"></div>
+              <ul class="footer-links">
+                  <li><a href="./about.html">About us</a></li>
+                  <li><a href="./redirect/hire.html">We're hiring! Join our team <span class="external-icon"></span></a></li>
+                  <li><a href="./news.html">Newsroom </a></li>
+                  <li><a href="./legal.html">Legal, privacy, copyright</a></li>
+                  <li><a href="./loc.html">Countries We Dont Operate In <span class="external-icon"></span></a></li>
+              </ul>
+          </div>
+          
+          <div class="footer-column">
+              <h3>Extras</h3>
+              <div class="divider"></div>
+              <ul class="footer-links">
+                  <li><a href="./servers.html">Our Servers</a></li>
+              </ul>
+          </div>
+      </div>
+      
+      <div class="footer-bottom">
+          <div class="disclaimera">
+              <span class="external-icon"></span> Link opens in new window. Site may not meet accessibility guidelines. contentltd.net&#8480;
+          </div>
+          <div class="social-icons">
+              <a href="https://discord.gg/MtWakXj9Cm" class="social-icon discord" aria-label="Discord"></a>
+          </div>
+      </div>
+    </footer>
+    
+    <style>
+    
+    .footer { background-color: #e6eaee; padding: 40px 20px 20px; color: #333; } 
+    .footer-container { 
+      display: flex; 
+      justify-content: space-between; 
+      max-width: 1200px; 
+      margin: 0 auto; 
+      flex-wrap: wrap; 
+    } 
+    .footer-column { 
+      flex: 1; 
+      min-width: 250px; 
+      margin-bottom: 30px; 
+      padding: 0 15px; 
+    } 
+    
+    .footer-column h3 { 
+      font-size: 18px; 
+      font-weight: normal; 
+      color: #444; 
+      margin-bottom: 10px; 
+    } 
+    .divider { 
+      height: 1px; 
+      background-color: #bbc4d1; 
+      margin-bottom: 15px; 
+    } 
+    .footer-links { 
+      list-style: none; 
+    } 
+    .footer-links li { 
+      margin-bottom: 12px; 
+    } 
+    .footer-links a { 
+      color: #333; text-decoration: none; font-size: 14px; 
+    } 
+    .footer-links a:hover { 
+      text-decoration: underline; 
+    } 
+    .external-icon { 
+      display: inline-block; 
+      width: 12px; 
+      height: 12px; 
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpolyline points='15 3 21 3 21 9'%3E%3C/polyline%3E%3Cline x1='10' y1='14' x2='21' y2='3'%3E%3C/line%3E%3C/svg%3E"); 
+      background-size: contain; 
+      background-repeat: no-repeat; 
+      margin-left: 4px; position: relative; top: 1px; 
+    } 
+    .footer-bottom { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      max-width: 1200px; 
+      margin: 20px auto 0; 
+      padding: 15px; 
+      flex-wrap: wrap; 
+    } 
+    .disclaimera { 
+      font-size: 12px; 
+      color: #555; 
+      margin-right: 20px; 
+      margin-bottom: 10px; 
+    } 
+    .social-icons { 
+      display: flex; 
+      gap: 10px; 
+    } 
+    .social-icon { 
+      display: block; 
+      width: 36px;
+      height: 36px; 
+      border-radius: 50%; 
+      background-color: #fff; 
+      border: 1px solid #ccc; 
+      background-position: center; 
+      background-repeat: no-repeat; 
+      background-size: 20px; 
+    } 
+    .facebook { 
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233b5998'%3E%3Cpath d='M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z'%3E%3C/path%3E%3C/svg%3E"); 
+    } .youtube { 
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff0000'%3E%3Cpath d='M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z'%3E%3C/path%3E%3Cpolygon fill='white' points='9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02'%3E%3C/polygon%3E%3C/svg%3E"); 
+    } 
+    .discord {
+      background-image: url("https://www.svgrepo.com/show/353655/discord-icon.svg");
+    }
+    .twitter { 
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231da1f2'%3E%3Cpath d='M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z'%3E%3C/path%3E%3C/svg%3E"); 
+    } /* Responsive adjustments 
+    */ @media (max-width: 768px) { 
+      .footer-container { flex-direction: column; } 
+      .footer-column { width: 100%; margin-bottom: 30px; } 
+      .footer-bottom { flex-direction: column; align-items: flex-start; } 
+      .social-icons { margin-top: 15px; } 
+    
+    }
+    
+      </style>
+</body></html>

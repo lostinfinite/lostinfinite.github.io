@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - ContentLTD</title>
+    <link rel="stylesheet" href="default-styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+        .headera:hover {
+            color: var(--cta-accent);
+        }
+
+        .header {
+  height: 45px;
+  background: rgba(0,0,0,0.7);
+  padding: 15px;
+  position: sticky;
+  display: flex;
+  z-index: 1000;
+  top: 0px;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 1s, color 1s;
+}
+
+.headera {
+  color: white; /* White text by default */
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+/* New Styles for when the header scrolls over features-all */
+.header.white-bg {
+  background-color: var(--light-mode-header); /* Use the --light-mode-header variable */
+  color: black; /* Black text when header is in white-bg state */
+}
+
+.header.white-bg .headera {
+  color: black;
+  text-decoration: underline; /* Black underline for links */
+}
+
+
+.header img {
+  height: 100%;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.headera {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+/* Hamburger menu (mobile) */
+.hamburger {
+  display: none; /* Hidden by default */
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Mobile Navigation Links (hidden by default) */
+.mobile-nav {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(171, 171, 171, 0.9);
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.mobile-nav a {
+  display: block;
+  color: black;
+  margin: 20px 0;
+  text-decoration: none;
+}
+
+/* Show hamburger icon and mobile nav on small screens */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Show hamburger on mobile */
+  }
+
+  .nav-links {
+    display: none; /* Hide desktop links on mobile */
+  }
+
+  .mobile-nav.active {
+    display: block; /* Show mobile menu when active */
+  }
+}
+    </style>
+</head>
+<body>
+  <div class="header">
+    <img src="https://cdn.contentltd.net/cltd.jpg" alt="Logo">
+    
+    <!-- Hamburger icon for mobile view -->
+    <div class="hamburger" onclick="toggleMenu()">
+      &#9776; <!-- This is the hamburger icon -->
+    </div>
+    
+    <!-- Desktop Navigation Links (visible on larger screens) -->
+    <div class="nav-links">
+      <a href="./index.html" class="headera">Home</a>
+      <a href="./about.html" class="headera">About</a>
+      <a href="mailto:info@contentltd.net" class="headera">Contact</a>
+      <a href="./servers.html" class="headera">Our Servers</a>
+    </div>
+    
+    <!-- Mobile Navigation Links (hidden by default, shown when hamburger clicked) -->
+    <div class="mobile-nav">
+      <a href="./index.html" class="headera">Home</a>
+      <a href="./about.html" class="headera">About</a>
+      <a href="mailto:info@contentltd.net" class="headera">Contact</a>
+      <a href="./servers.html" class="headera">Our Servers</a>
+    </div>
+  </div>
+    <header>
+        <h1>About ContentLTD</h1>
+    </header>
+
+    <section class="about-us">
+        <h2>Who We Are</h2>
+        <p>ContentLTD (CLTD) is a premier service provider focused on helping gaming communities and servers thrive. We offer a range of tailored solutions, including Anti-Raid protection, ERLC management, and Server Advertising services. Our goal is to create safer, more engaging, and more visible communities for your server, so you can focus on building and enjoying your community without distractions.</p>
+    </section>
+
+    <section class="services">
+        <h2>Our Services</h2>
+
+        <div class="service-item">
+            <h3>Anti-Raid Protection</h3>
+            <p>Raid attacks can disrupt your server's environment and damage your community. At ContentLTD, we provide robust Anti-Raid Protection services to ensure that your server stays safe from malicious users and disruptive behavior. With our monitoring tools and rapid response protocols, we offer peace of mind and help you maintain a positive environment for your members.</p>
+        </div>
+
+        <div class="service-item">
+            <h3>ERLC Management</h3>
+            <p>We specialize in managing Emergency Response: Liberty County (ERLC) servers, offering everything from in-game moderation to server maintenance. Our team ensures smooth operations, helps with event planning, and manages updates so you can focus on delivering the best experience for your players. With CLTD, your ERLC server will run smoothly and professionally, giving you a hassle-free experience.</p>
+        </div>
+
+        <div class="service-item">
+            <h3>Server Advertising</h3>
+            <p>Visibility is key to growing your server. We provide targeted advertising services to get your server in front of the right audience. With our expertise in digital marketing and community engagement, we help promote your server across various platforms to attract active and dedicated players. Get more exposure, grow your community, and build a lasting presence in the gaming world.</p>
+        </div>
+    </section>
+   
+    <footer class="footer">
+      <div class="footer-container">
+          <div class="footer-column">
+              <h3>Help</h3>
+              <div class="divider"></div>
+              <ul class="footer-links">
+                  <li><a href="mailto:info@contentltd.net">Contact Us</a></li>
+                  <li><a href="./faq.html">FAQs</a></li>
+              </ul>
+          </div>
+          
+          <div class="footer-column">
+              <h3>About ContentLTD</h3>
+              <div class="divider"></div>
+              <ul class="footer-links">
+                  <li><a href="./about.html">About us</a></li>
+                  <li><a href="./redirect/hire.html">We're hiring! Join our team <span class="external-icon"></span></a></li>
+                  <li><a href="./news.html">Newsroom </a></li>
+                  <li><a href="./legal.html">Legal, privacy, copyright</a></li>
+                  <li><a href="./loc.html">Countries We Dont Operate In <span class="external-icon"></span></a></li>
+              </ul>
+          </div>
+          
+          <div class="footer-column">
+              <h3>Extras</h3>
+              <div class="divider"></div>
+              <ul class="footer-links">
+                  <li><a href="./servers.html">Our Servers</a></li>
+              </ul>
+          </div>
+      </div>
+      
+      <div class="footer-bottom">
+          <div class="disclaimera">
+              <span class="external-icon"></span> Link opens in new window. Site may not meet accessibility guidelines. contentltd.net&#8480;
+          </div>
+          <div class="social-icons">
+              <a href="https://discord.gg/MtWakXj9Cm" class="social-icon discord" aria-label="Discord"></a>
+          </div>
+      </div>
+    </footer>
+      
+      <style>
+      
+      .footer { background-color: #e6eaee; padding: 40px 20px 20px; color: #333; } 
+
+      .footer-container { 
+        display: flex; 
+        justify-content: space-between; 
+        max-width: 1200px; 
+        margin: 0 auto; 
+        flex-wrap: wrap; 
+      } 
+      .footer-column { 
+        flex: 1; 
+        min-width: 250px; 
+        margin-bottom: 30px; 
+        padding: 0 15px; 
+      } 
+      
+      .footer-column h3 { 
+        font-size: 18px; 
+        font-weight: normal; 
+        color: #444; 
+        margin-bottom: 10px; 
+      } 
+      .divider { 
+        height: 1px; 
+        background-color: #bbc4d1; 
+        margin-bottom: 15px; 
+      } 
+      .footer-links { 
+        list-style: none; 
+      } 
+      .footer-links li { 
+        margin-bottom: 12px; 
+      } 
+      .footer-links a { 
+        color: #333; text-decoration: none; font-size: 14px; 
+      } 
+      .footer-links a:hover { 
+        text-decoration: underline; 
+      } 
+      .external-icon { 
+        display: inline-block; 
+        width: 12px; 
+        height: 12px; 
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpolyline points='15 3 21 3 21 9'%3E%3C/polyline%3E%3Cline x1='10' y1='14' x2='21' y2='3'%3E%3C/line%3E%3C/svg%3E"); 
+        background-size: contain; 
+        background-repeat: no-repeat; 
+        margin-left: 4px; position: relative; top: 1px; 
+      } 
+      .footer-bottom { 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        max-width: 1200px; 
+        margin: 20px auto 0; 
+        padding: 15px; 
+        flex-wrap: wrap; 
+      } 
+      .disclaimera { 
+        font-size: 12px; 
+        color: #555; 
+        margin-right: 20px; 
+        margin-bottom: 10px; 
+      } 
+      .social-icons { 
+        display: flex; 
+        gap: 10px; 
+      } 
+      .social-icon { 
+        display: block; 
+        width: 36px;
+        height: 36px; 
+        border-radius: 50%; 
+        background-color: #fff; 
+        border: 1px solid #ccc; 
+        background-position: center; 
+        background-repeat: no-repeat; 
+        background-size: 20px; 
+      } 
+      .facebook { 
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233b5998'%3E%3Cpath d='M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z'%3E%3C/path%3E%3C/svg%3E"); 
+      } .youtube { 
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff0000'%3E%3Cpath d='M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z'%3E%3C/path%3E%3Cpolygon fill='white' points='9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02'%3E%3C/polygon%3E%3C/svg%3E"); 
+      } 
+      .discord {
+        background-image: url("https://www.svgrepo.com/show/353655/discord-icon.svg");
+      }
+      .twitter { 
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231da1f2'%3E%3Cpath d='M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z'%3E%3C/path%3E%3C/svg%3E"); 
+      } /* Responsive adjustments 
+      */ @media (max-width: 768px) { 
+        .footer-container { flex-direction: column; } 
+        .footer-column { width: 100%; margin-bottom: 30px; } 
+        .footer-bottom { flex-direction: column; align-items: flex-start; } 
+        .social-icons { margin-top: 15px; } 
+      
+      }
+      
+        </style>
+</body>
+</html>
