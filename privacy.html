@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)https://contentltd.net/privacy.html -->
+<html lang="en"><head>     <link rel="stylesheet" href="default-styles.css"> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Select all dropdown headers
+  const dropdowns = document.querySelectorAll('.dropdown');
+
+  dropdowns.forEach(dropdown => {
+    dropdown.addEventListener('click', () => {
+      const content = dropdown.nextElementSibling;
+      const imgDropdown = dropdown.querySelector('.img-dropdown');
+      const imgUnexpand = dropdown.querySelector('.img-unexpand');
+
+      // Toggle the display of the dropdown content
+      if (content.style.display === "block") {
+        content.style.display = "none";
+        imgDropdown.style.display = "inline-block";
+        imgUnexpand.style.display = "none";
+      } else {
+        content.style.display = "block";
+        imgDropdown.style.display = "none";
+        imgUnexpand.style.display = "inline-block";
+      }
+    });
+
+    // Ensure initial state
+    const content = dropdown.nextElementSibling;
+    const imgDropdown = dropdown.querySelector('.img-dropdown');
+    const imgUnexpand = dropdown.querySelector('.img-unexpand');
+
+    if (content.style.display === "block") {
+      imgDropdown.style.display = "none";
+      imgUnexpand.style.display = "inline-block";
+    } else {
+      imgDropdown.style.display = "inline-block";
+      imgUnexpand.style.display = "none";
+    }
+  });
+});
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+      const header = document.querySelector('.header');
+      const featuresAll = document.querySelector('.features-all');
+    
+      // Set up the IntersectionObserver
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // The header has passed over the features-all section, apply styles
+            header.classList.add('white-bg');
+            console.log("Header has passed over features-all");
+          } else {
+            // The header is not over the features-all section, remove styles
+            header.classList.remove('white-bg');
+            console.log("Header is not over features-all");
+          }
+        });
+      }, {
+        // Set up the observer to track when .features-all is in the viewport
+        threshold: 0.01 // This means the whole .features-all element has to be in view
+      });
+    
+      // Start observing the .features-all element
+      observer.observe(featuresAll);
+    });
+    
+    function toggleMenu() {
+      const mobileNav = document.querySelector('.mobile-nav');
+      mobileNav.classList.toggle('active'); // Toggle the 'active' class to show/hide the menu
+    }
+    
+    
+        </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+    .dropdown-content {
+      display: none;
+      padding: 10px;
+      background-color: #1d1d1d;
+      margin-top: 5px;
+    }
+    .dropdown {
+      cursor: pointer;
+      font-weight: bold;
+      padding: 10px;
+      background-color: #1d1d1d;
+      margin-bottom: 5px;
+    }
+  </style>
+    <style>
+
+        /* Default Header Style */
+
+.header {
+  height: 45px;
+  background: #000;
+  padding: 15px;
+  position: sticky;
+  display: flex;
+  z-index: 1000;
+  top: 0px;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 1s, color 1s;
+}
+
+.headera {
+  color: white; /* White text by default */
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+/* New Styles for when the header scrolls over features-all */
+.header.white-bg {
+  background-color: var(--light-mode-header); /* Use the --light-mode-header variable */
+  color: black; /* Black text when header is in white-bg state */
+}
+
+.header.white-bg .headera {
+  color: black;
+  text-decoration: underline; /* Black underline for links */
+}
+
+
+.header img {
+  height: 100%;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.headera {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+/* Hamburger menu (mobile) */
+.hamburger {
+  display: none; /* Hidden by default */
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Mobile Navigation Links (hidden by default) */
+.mobile-nav {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(171, 171, 171, 0.9);
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.mobile-nav a {
+  display: block;
+  color: black;
+  margin: 20px 0;
+  text-decoration: none;
+}
+
+        :root {
+    --light-mode-header: rgba(102, 102, 102, 0.5);
+    --main-bg: #1d1d1d;
+    --bg-accent: #000;
+    --text-main: #fff;
+    --cta-accent: #FFBB00;
+    --accent-var1: #FFBB00;
+    --cta-main-text: #000;
+    --heading-font: "Open Sans Light", sans-serif;
+    --main-font: "Open Sans", sans-serif;
+    --heading-font-weight: 300;
+    --main-font-weight: 400;
+    --heading-font-size: 2.5em;
+    --main-font-size: 1.2em;
+    --default-align: center;
+    --default-padding: 10px;
+    --default-align-left: left;
+    --default-align-right: right;
+    --text-size-secondary: 1em;
+    --disclaimer-size: 0.5em;
+    --text-size-smaller: 0.75em;
+    --text-size-smallest-readable: 0.60em;
+    --policy-padding: 8.0875em;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+.pp-body{
+  padding: var(--policy-padding);
+}
+::marker {
+    content: "■ "; /* Unicode square with a space */
+    color: #CCCACA;
+    font-size: 1em;
+}
+
+li {
+    list-style-type: none; /* Remove default markers */
+}
+
+
+table {
+    width: 100%;
+            border-collapse: collapse;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+}
+.des {
+    background-color: #111;
+    color: white;
+    border-radius: 10px;
+}
+
+.even {
+    background-color: #333;
+    color: white;
+}
+
+body {
+            background-color: #1d1d1d;
+            color: white;
+            font-family: Open Sans, sans-serif;
+            margin: 0;
+            min-width: 320px;
+            overflow-x: hidden;
+            z-index: 0; /* Keeps it above other content */
+
+        }
+        
+        body a {
+            color: #fff;
+        }
+        
+        
+
+        h1 {
+    font-family: var(--heading-font);
+    font-weight: 100;
+    font-size: var(--heading-font-size);
+    color: var(--text-main);
+    text-align: var(--default-align);
+    font-variation-settings: "wght" 100;
+        }
+  a {
+    font-family: var(--main-font);
+    font-weight: var(--main-font-weight);
+    font-size: var(--main-font-size);
+    color: var(--text-main);
+    text-align: var(--default-align);
+    padding: var(--default-padding);
+}
+
+a:hover {
+    font-family: var(--main-font);
+    font-weight: var(--main-font-weight);
+    font-size: var(--main-font-size);
+    color: var(--cta-accent);
+    text-align: var(--default-align);
+    padding: var(--default-padding);
+}
+
+p {
+    font-family: var(--main-font);
+    font-weight: var(--main-font-weight);
+    font-size: var(--main-font-size);
+    color: var(--text-main);
+    text-align: var(--default-align);
+    padding: var(--default-padding);
+    
+}
+
+.img-dropdown, .img-unexpand {
+    height: 2rem;
+    line-height: 1;
+    margin-right: 4px;
+    position: relative;
+    top: 2px;
+
+}
+
+.dd-head, .img-dropdown, .img-unexpand{
+  display: inline-block;
+}
+    </style>
+</head><body>
+
+  <div class="header">
+    <img src="https://cdn.contentltd.net/cltd.jpg" alt="Logo">
+    
+    <!-- Hamburger icon for mobile view -->
+    <div class="hamburger" onclick="toggleMenu()">
+      ☰ <!-- This is the hamburger icon -->
+    </div>
+    
+    <!-- Desktop Navigation Links (visible on larger screens) -->
+    <div class="nav-links">
+      <a href="https://contentltd.net/index.html" class="headera">Home</a>
+      <a href="https://contentltd.net/about.html" class="headera">About</a>
+      <a href="mailto:info@contentltd.net" class="headera">Contact</a>
+      <a href="https://contentltd.net/servers.html" class="headera">Our Servers</a>
+    </div>
+    
+    <!-- Mobile Navigation Links (hidden by default, shown when hamburger clicked) -->
+    <div class="mobile-nav">
+      <a href="https://contentltd.net/index.html" class="headera">Home</a>
+      <a href="https://contentltd.net/about.html" class="headera">About</a>
+      <a href="mailto:info@contentltd.net" class="headera">Contact</a>
+      <a href="https://contentltd.net/servers.html" class="headera">Our Servers</a>
+    </div>
+  </div>
+
+      <div class="pp-body">
+    <h1>ContentLTD Privacy Policy</h1>
+    <p><strong>Effective Date:</strong> 3/21/25</p>
+    <p><strong>Last Updated:</strong> 3/21/25</p>
+
+    <p>Welcome to ContentLTD. This Privacy Policy outlines how we collect, use, store, and protect your information when you access or use our services, including Emergency Response: Liberty County (ER:LC) Roblox servers, associated Discord servers, and official websites (collectively, the "Services"). By using our Services, you agree to the terms described in this policy. If you do not agree, you must discontinue use of our Services.</p>    <div id="agreement-and-acceptance" class="dropdown">
+        <img src="https://contentltd.net/expand-yellow.png" class="img-dropdown" style="display: inline-block;">
+        <img src="https://contentltd.net/unexpand-yellow.png" class="img-unexpand" style="display: none;">
+        <h2 id="agreement-and-acceptance" class="dd-head"> Agreement and Acceptance</h2>
+    </div>
+    <div class="dropdown-content" style="display: none;">
+        <p>By using our Services, you affirm that you have read, understood, and agreed to this Privacy Policy. If you do not agree with any portion of this policy, your only recourse is to discontinue use of our Services.</p>
+    </div>
+
+    <div id="information-we-collect" class="dropdown">
+        <img src="https://contentltd.net/expand-yellow.png" class="img-dropdown" style="display: inline-block;">
+        <img src="https://contentltd.net/unexpand-yellow.png" class="img-unexpand" style="display: none;">
+        <h2 id="information-we-collect" class="dd-head">1. Information We Collect</h2>
+    </div>
+    <div class="dropdown-content" style="display: none;">
+        <h3>1.1 Data Logged Automatically</h3>
+        <p>We collect and log the following information when you interact with our Services:</p>
+        <ul>
+            <li>Server details</li>
+            <li>Guild IDs</li>
+            <li>Invite links</li>
+            <li>All messages sent, edited, or deleted within our Discord servers</li>
+            <li>Information on who sent messages and where messages were sent</li>
+            <li>All server names</li>
+            <li>All channels regardless of visibility</li>
+            <li>All roles</li>
+            <li>All emojis</li>
+        </ul>
+        <p>This data is collected for moderation, security, and administrative purposes, as well as for the "Server Backup" function in our Content Solutions (SM) Bot, which allows server owners to restore their server in the event of a raid.</p>
+
+        <h3>1.2 Additional Data That May Be Collected</h3>
+        <p>In certain cases, we may also log additional details to prevent abuse and maintain security, such as:</p>
+        <ul>
+            <li>IP addresses associated with user connections</li>
+            <li>Device and browser type when accessing our website</li>
+            <li>Timestamps of interactions with our services</li>
+        </ul>
+        <p>We do not actively track your location or other personally identifiable information (PII).</p>
+
+        <h3>1.3 No Personal Data Requests</h3>
+        <p>We do not provide data when or if requested, as it is impossible due to our storage and retention policies.</p>
+    </div>
+
+    <div id="your-privacy-choices" class="dropdown">
+        <img src="https://contentltd.net/expand-yellow.png" class="img-dropdown" style="display: inline-block;">
+        <img src="https://contentltd.net/unexpand-yellow.png" class="img-unexpand" style="display: none;">
+        <h2 id="your-privacy-choices" class="dd-head">2. Your Privacy Choices</h2>
+    </div>
+    <div class="dropdown-content" style="display: none;">
+        <p>Your only method of opting out of our data collection is by leaving all servers we are affiliated with. A list of affiliated servers can be found on our official website under the "Our Servers" page.</p>
+
+        <h3>2.1 Right to Anonymity</h3>
+        <p>Users are encouraged to limit the personal information they voluntarily share in our Services. We are not responsible for any data users willingly disclose in chat, forums, or other public spaces within our Services.</p>
+
+        <h3>2.2 No Guaranteed Data Deletion</h3>
+        <p>Due to the way our logging systems function, we cannot guarantee the deletion of any logged information. Once recorded, messages and associated metadata remain stored indefinitely to ensure the safety, security, and integrity of our community.</p>
+    </div>
+
+    <div id="how-we-use-your-information" class="dropdown">
+        <img src="https://contentltd.net/expand-yellow.png" class="img-dropdown" style="display: inline-block;">
+        <img src="https://contentltd.net/unexpand-yellow.png" class="img-unexpand" style="display: none;">
+        <h2 id="how-we-use-your-information" class="dd-head">3. How We Use Your Information</h2>
+    </div>
+    <div class="dropdown-content" style="display: none;">
+        <p>We use the collected data to:</p>
+        <ul>
+            <li>Enforce our Terms of Service</li>
+            <li>Maintain the security and integrity of our Services</li>
+            <li>Prevent fraud, abuse, and misconduct</li>
+            <li>Enhance user experience and operational efficiency</li>
+            <li>Investigate violations and enforce disciplinary actions</li>
+            <li>Provide the "Server Backup" feature to server owners</li>
+        </ul>
+        <p>We do not sell, rent, or share your data with third parties outside of ContentLTD, except when required by law.</p>
+    </div>
+
+    <div id="data-retention-and-security" class="dropdown">
+        <img src="https://contentltd.net/expand-yellow.png" class="img-dropdown" style="display: inline-block;">
+        <img src="https://contentltd.net/unexpand-yellow.png" class="img-unexpand" style="display: none;">
+        <h2 id="data-retention-and-security" class="dd-head">4. Data Retention and Security</h2>
+    </div>
+    <div class="dropdown-content" style="display: none;">
+        <p>We retain logged data for an indefinite period to ensure community safety and enforce our policies. Data is stored securely, and access is restricted to authorized personnel only. While we take reasonable steps to protect user data, no online system is completely secure, and users acknowledge the risks associated with online data transmission.</p>
+
+        <h3>4.1 AI and Automated Features</h3>
+        <p>We may use artificial intelligence (AI) for our Anti-Raiding features in our bot (possibly coming soon). AI-based detection will be used to enhance our security measures.</p>
+
+        <h3>4.2 Data Breach Policy</h3>
+        <p>In the unlikely event of a data breach, we will take immediate action to secure affected systems and may notify impacted users if required by applicable law.</p>
+    </div>
+
+    <div id="international-data-protection-compliance" class="dropdown">
+        <img src="https://contentltd.net/expand-yellow.png" class="img-dropdown" style="display: inline-block;">
+        <img src="https://contentltd.net/unexpand-yellow.png" class="img-unexpand" style="display: none;">
+        <h2 id="international-data-protection-compliance" class="dd-head">5. International Data Protection Compliance</h2>
+    </div>
+    <div class="dropdown-content" style="display: none;">
+        <h3>5.1 U.S. Data Protection Standards</h3>
+        <p>All privacy matters are governed by U.S. laws. The General Data Protection Regulation (GDPR) does not apply to our Services. By using ContentLTD’s Services, you acknowledge and agree that your data is processed in accordance with U.S. laws and not GDPR.</p>
+
+        <h3>5.2 Age Requirements</h3>
+        <p>To use our Services, users must meet the age requirements outlined in our Terms of Service. Parents or guardians must provide consent for underage users where required by law. We do not knowingly collect data from users who fail to meet these age requirements.</p>
+    </div>
+
+    <div id="disclosure-of-data" class="dropdown">
+        <img src="https://contentltd.net/expand-yellow.png" class="img-dropdown" style="display: inline-block;">
+        <img src="https://contentltd.net/unexpand-yellow.png" class="img-unexpand" style="display: none;">
+        <h2 id="disclosure-of-data" class="dd-head">6. Disclosure of Data</h2>
+    </div>
+    <div class="dropdown-content" style="display: none;">
+        <p>We may disclose collected data under the following circumstances:</p>
+        <ul>
+            <li><strong>Legal Obligations:</strong> If required by law, court order, or government regulation.</li>
+            <li><strong>Enforcement of Terms:</strong> To investigate violations and enforce disciplinary actions.</li>
+            <li><strong>Protection of Rights and Safety:</strong> To protect the rights, safety, and security of ContentLTD, its users, or third parties.</li>
+        </ul>
+        <p>We do not disclose data for commercial purposes or unauthorized third-party access.</p>
+    </div>
+
+    <div id="message-logging-retention" class="dropdown">
+      <img src="https://contentltd.net/expand-yellow.png" class="img-dropdown" style="display: inline-block;">
+      <img src="https://contentltd.net/unexpand-yellow.png" class="img-unexpand" style="display: none;">
+      <h2 id="message-logging-retention" class="dd-head">7. Message Logging and Temporary Retention</h2>
+  </div>
+  
+  <div class="dropdown-content">
+      <p>
+          To facilitate effective moderation and security within our Services, all messages transmitted via our Discord servers are logged through terminal outputs. Our service provider, Whispbyte (formerly Pylexnodes), maintains these terminal logs for a limited duration. The precise retention period is variable, dependent on the volume of messages, user actions, and moderation activities (including bans). Specifically, log wiping frequency is influenced by the rate of message generation, the number of administrative actions performed, and the size of our ban list. As a result, message logs are automatically and systematically purged within a timeframe ranging from minutes to a maximum of several hours.
+      </p>
+      <p>
+          Due to this dynamic and short-term retention policy, we are unable to provide users with copies of their logged messages upon request. This practice is implemented to minimize data storage and enhance user privacy, while still providing the tools needed for effective moderation of our services.
+      </p>
+  </div>
+
+
+    <div id="changes-to-this-policy" class="dropdown">
+        <img src="https://contentltd.net/expand-yellow.png" class="img-dropdown" style="display: inline-block;">
+        <img src="https://contentltd.net/expand-yellow.png" class="img-unexpand" style="display: none;">
+        <h2 id="changes-to-this-policy" class="dd-head">8. Changes to This Policy</h2>
+    </div>
+    <div class="dropdown-content" style="display: none;">
+        <p>We may update this Privacy Policy from time to time. Any changes will be posted on our website with an updated "Last Updated" date. Continued use of our Services after changes indicates acceptance of the updated policy.</p>
+
+        <h3>8.1 Notification of Changes</h3>
+        <p>While we are not obligated to provide direct notifications of changes, we encourage users to periodically review this policy to stay informed.</p>
+    </div>
+
+    <div id="contact-information" class="dropdown">
+        <img src="https://contentltd.net/expand-yellow.png" class="img-dropdown" style="display: inline-block;">
+        <img src="https://contentltd.net/expand-yellow.png" class="img-unexpand" style="display: none;">
+        <h2 id="contact-information" class="dd-head">9. Contact Information</h2>
+    </div>
+    <div class="dropdown-content" style="display: none;">
+        <p>If you have questions regarding this Privacy Policy, you may contact us at:</p>
+        <p><strong>Email:</strong> info@contentltd.net</p>
+        <p><strong>Address:</strong> For legal inquiries, you may send correspondence to our designated office. Please note that we do not accept physical requests for data removal.</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-column">
+            <h3>Help</h3>
+            <div class="divider"></div>
+            <ul class="footer-links">
+                <li><a href="mailto:info@contentltd.net">Contact Us</a></li>
+                <li><a href="https://contentltd.net/faq.html">FAQs</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-column">
+            <h3>About ContentLTD</h3>
+            <div class="divider"></div>
+            <ul class="footer-links">
+                <li><a href="https://contentltd.net/about.html">About us</a></li>
+                <li><a href="https://contentltd.net/redirect/hire.html">We're hiring! Join our team <span class="external-icon"></span></a></li>
+                <li><a href="https://contentltd.net/news.html">Newsroom </a></li>
+                <li><a href="https://contentltd.net/legal.html">Legal, privacy, copyright</a></li>
+                <li><a href="https://contentltd.net/loc.html">Countries We Dont Operate In <span class="external-icon"></span></a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Extras</h3>
+            <div class="divider"></div>
+            <ul class="footer-links">
+                <li><a href="https://contentltd.net/servers.html">Our Servers</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <div class="disclaimera">
+            <span class="external-icon"></span> Link opens in new window. Site may not meet accessibility guidelines. contentltd.net℠
+        </div>
+        <div class="social-icons">
+            <a href="https://discord.gg/MtWakXj9Cm" class="social-icon discord" aria-label="Discord"></a>
+        </div>
+    </div>
+  </footer>
+  
+  <style>
+  
+  .footer { background-color: #e6eaee; padding: 40px 20px 20px; color: #333; } 
+  .footer-container { 
+    display: flex; 
+    justify-content: space-between; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    flex-wrap: wrap; 
+  } 
+  .footer-column { 
+    flex: 1; 
+    min-width: 250px; 
+    margin-bottom: 30px; 
+    padding: 0 15px; 
+  } 
+  
+  .footer-column h3 { 
+    font-size: 18px; 
+    font-weight: normal; 
+    color: #444; 
+    margin-bottom: 10px; 
+  } 
+  .divider { 
+    height: 1px; 
+    background-color: #bbc4d1; 
+    margin-bottom: 15px; 
+  } 
+  .footer-links { 
+    list-style: none; 
+  } 
+  .footer-links li { 
+    margin-bottom: 12px; 
+  } 
+  .footer-links a { 
+    color: #333; text-decoration: none; font-size: 14px; 
+  } 
+  .footer-links a:hover { 
+    text-decoration: underline; 
+  } 
+  .external-icon { 
+    display: inline-block; 
+    width: 12px; 
+    height: 12px; 
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpolyline points='15 3 21 3 21 9'%3E%3C/polyline%3E%3Cline x1='10' y1='14' x2='21' y2='3'%3E%3C/line%3E%3C/svg%3E"); 
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    margin-left: 4px; position: relative; top: 1px; 
+  } 
+  .footer-bottom { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    max-width: 1200px; 
+    margin: 20px auto 0; 
+    padding: 15px; 
+    flex-wrap: wrap; 
+  } 
+  .disclaimera { 
+    font-size: 12px; 
+    color: #555; 
+    margin-right: 20px; 
+    margin-bottom: 10px; 
+  } 
+  .social-icons { 
+    display: flex; 
+    gap: 10px; 
+  } 
+  .social-icon { 
+    display: block; 
+    width: 36px;
+    height: 36px; 
+    border-radius: 50%; 
+    background-color: #fff; 
+    border: 1px solid #ccc; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: 20px; 
+  } 
+  .facebook { 
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233b5998'%3E%3Cpath d='M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z'%3E%3C/path%3E%3C/svg%3E"); 
+  } .youtube { 
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff0000'%3E%3Cpath d='M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z'%3E%3C/path%3E%3Cpolygon fill='white' points='9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02'%3E%3C/polygon%3E%3C/svg%3E"); 
+  } 
+  .discord {
+    background-image: url("https://www.svgrepo.com/show/353655/discord-icon.svg");
+  }
+  .twitter { 
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231da1f2'%3E%3Cpath d='M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z'%3E%3C/path%3E%3C/svg%3E"); 
+  } /* Responsive adjustments 
+  */ @media (max-width: 768px) { 
+    .footer-container { flex-direction: column; } 
+    .footer-column { width: 100%; margin-bottom: 30px; } 
+    .footer-bottom { flex-direction: column; align-items: flex-start; } 
+    .social-icons { margin-top: 15px; } 
+  
+  }
+  
+    </style>
+<script defer="" src="./vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;9290ef06abcd4bbd&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;version&quot;:&quot;2025.1.0&quot;,&quot;token&quot;:&quot;d938ef13d5a44397a104dab04be6d8fa&quot;}" crossorigin="anonymous"></script>
+
+</body></html>

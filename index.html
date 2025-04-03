@@ -1,0 +1,998 @@
+<html><head>
+  <title>ContentLTD</title>
+  <link href="https://cdn.contentltd.net/cltd.jpg" rel="icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Basic Meta Tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>ContentLTD - #1 ER:LC Server Management & Anti-Raid Protection</title>
+<meta name="description" content="The number one ER:LC Server management agency providing the best on-market Anti-Raid protection services. We protect your servers from raids and corruption.">
+<meta name="keywords" content="ER:LC, server management, anti-raid protection, Emergency Response Liberty County, game servers, server security, raid protection, ContentLTD">
+<meta name="author" content="ContentLTD">
+<meta name="robots" content="index, follow">
+<meta name="language" content="English">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://contentltd.net/">
+
+<!-- Favicon and Apple Touch Icons -->
+<link rel="icon" href="https://cdn.contentltd.net/cltd.jpg">
+<link rel="shortcut icon" href="https://cdn.contentltd.net/cltd.jpg">
+<link rel="apple-touch-icon" href="https://cdn.contentltd.net/cltd.jpg">
+<meta name="theme-color" content="#000000">
+
+<!-- Open Graph Meta Tags for Social Media -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://contentltd.net/">
+<meta property="og:title" content="ContentLTD - Premium ER:LC Server Management">
+<meta property="og:description" content="The #1 ER:LC Server management agency with the best anti-raid protection. Secure your server today!">
+<meta property="og:image" content="https://imagedelivery.net/kGAxGmhovFjft44aAIlSSQ/cc8225a3-952d-418d-6345-c568a23dd800/public">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="ContentLTD">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://contentltd.net/">
+<meta name="twitter:title" content="ContentLTD - ER:LC Server Protection Experts">
+<meta name="twitter:description" content="Protect your ER:LC server with our premium management and anti-raid services. The most trusted name in server security.">
+<meta name="twitter:image" content="https://imagedelivery.net/kGAxGmhovFjft44aAIlSSQ/cc8225a3-952d-418d-6345-c568a23dd800/public">
+
+<!-- Discord Meta Tags -->
+<meta property="og:site_name" content="ContentLTD">
+<meta property="og:title" content="ContentLTD - Server Protection">
+<meta property="og:description" content="Join the #1 ER:LC server protection service">
+<meta property="og:image" content="https://imagedelivery.net/kGAxGmhovFjft44aAIlSSQ/cc8225a3-952d-418d-6345-c568a23dd800/public">
+<meta name="theme-color" content="#000000">
+
+<!-- Structured Data (JSON-LD) for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "ContentLTD",
+  "url": "https://contentltd.net",
+  "logo": "https://cdn.contentltd.net/cltd.jpg",
+  "image": "https://imagedelivery.net/kGAxGmhovFjft44aAIlSSQ/cc8225a3-952d-418d-6345-c568a23dd800/public",
+  "description": "The number one ER:LC Server management agency with the best on-market Anti-Raid protection",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "email": "support@contentltd.net"
+  },
+  "sameAs": [
+    "https://discord.gg/MtWakXj9Cm"
+  ]
+}
+</script>
+
+<!-- Service Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "ER:LC Server Management",
+  "provider": {
+    "@type": "Organization",
+    "name": "ContentLTD",
+    "logo": "https://cdn.contentltd.net/cltd.jpg"
+  },
+  "description": "Professional ER:LC server management and anti-raid protection services",
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock"
+  },
+  "image": "https://imagedelivery.net/kGAxGmhovFjft44aAIlSSQ/cc8225a3-952d-418d-6345-c568a23dd800/public"
+}
+</script>
+
+<!-- Additional Meta Tags -->
+<meta name="format-detection" content="telephone=no">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="msapplication-TileImage" content="https://cdn.contentltd.net/cltd.jpg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="ContentLTD">
+<meta name="application-name" content="ContentLTD">
+  <link rel="stylesheet" href="default-styles.css">
+  <script>
+  window.onload = function() {
+      let img = document.getElementsByTagName("img")[0]; // Get the first <img> element
+      img.src = "https://cdn.contentltd.net/cltd.jpg"; // Set the correct image source
+  };
+  </script>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const header = document.querySelector('.header');
+    const featuresAll = document.querySelector('.features-all');
+
+    // Set up the IntersectionObserver
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // The header has passed over the features-all section, apply styles
+          header.classList.add('white-bg');
+          console.log("Header has passed over features-all");
+        } else {
+          // The header is not over the features-all section, remove styles
+          header.classList.remove('white-bg');
+          console.log("Header is not over features-all");
+        }
+      });
+    }, {
+      // Set up the observer to track when .features-all is in the viewport
+      threshold: 0.01 // This means the whole .features-all element has to be in view
+    });
+
+    // Start observing the .features-all element
+    observer.observe(featuresAll);
+  });
+
+
+
+  function toggleMenu() {
+    const mobileNav = document.querySelector('.mobile-nav');
+    mobileNav.classList.toggle('active'); // Toggle the 'active' class to show/hide the menu
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    // Select all dropdown headers
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    dropdowns.forEach(dropdown => {
+      dropdown.addEventListener('click', () => {
+        const content = dropdown.nextElementSibling;
+        const imgDropdown = dropdown.querySelector('.img-dropdown');
+        const imgUnexpand = dropdown.querySelector('.img-unexpand');
+
+        // Toggle the display of the dropdown content
+        if (content.style.display === "block") {
+          content.style.display = "none";
+          imgDropdown.style.display = "inline-block";
+          imgUnexpand.style.display = "none";
+        } else {
+          content.style.display = "block";
+          imgDropdown.style.display = "none";
+          imgUnexpand.style.display = "inline-block";
+        }
+      });
+
+      // Ensure initial state
+      const content = dropdown.nextElementSibling;
+      const imgDropdown = dropdown.querySelector('.img-dropdown');
+      const imgUnexpand = dropdown.querySelector('.img-unexpand');
+
+      if (content.style.display === "block") {
+        imgDropdown.style.display = "none";
+        imgUnexpand.style.display = "inline-block";
+      } else {
+        imgDropdown.style.display = "inline-block";
+        imgUnexpand.style.display = "none";
+      }
+    });
+  });
+
+  function scrollToPricing() {
+      let pricingElement = document.getElementById("pricing");
+      let offset = 50; // Adjust this value to scroll a bit above
+
+      window.scrollTo({
+          top: pricingElement.offsetTop - offset,
+          behavior: "smooth"
+      });
+  }
+  </script>
+  <style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+  :root {
+      --light-mode-header: rgba(102, 102, 102, 0.5);
+      --main-bg: #1d1d1d;
+      --bg-accent: #1f4874;
+      --text-main: #fff;
+      --cta-accent: #FFBB00;
+      --accent-var1: #FFBB00;
+      --cta-main-text: #000;
+      --heading-font: "Open Sans", sans-serif;
+      --main-font: "Open Sans", sans-serif;
+      --heading-font-weight: 300;
+      --main-font-weight: 400;
+      --heading-font-size: 2.5em;
+      --main-font-size: 1.2em;
+      --default-align: center;
+      --default-padding: 10px;
+      --default-align-left: left;
+      --default-align-right: right;
+      --text-size-secondary: 1em;
+      --disclaimer-size: 0.5em;
+      --text-size-smaller: 0.75em;
+      --text-size-smallest-readable: 0.60em;
+  }
+
+  /* New cruise-inspired styles */
+  body {
+      background-color: #ebf5f9;
+      color: #1f4874;
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      min-width: 320px;
+      overflow-x: hidden;
+  }
+  
+  body a {
+      color: #1f4874;
+      text-decoration: none;
+  }
+  
+  h1 {
+      font-family: var(--heading-font);
+      font-weight: 700;
+      font-size: 2.2rem;
+      color: #1f4874;
+      text-align: var(--default-align);
+      margin-bottom: 1rem;
+  }
+
+  h2 {
+      font-family: var(--heading-font);
+      font-weight: 600;
+      font-size: 1.8rem;
+      color: #1f4874;
+      margin-bottom: 0.75rem;
+  }
+
+  h3 {
+      font-family: var(--heading-font);
+      font-weight: 600;
+      font-size: 1.4rem;
+      color: #1f4874;
+  }
+  
+  p {
+      font-family: var(--main-font);
+      font-weight: var(--main-font-weight);
+      font-size: var(--main-font-size);
+      color: #333;
+      text-align: var(--default-align);
+      line-height: 1.6;
+  }
+  
+  .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+  }
+  
+  /* Header Styles */
+  .header {
+      background-color: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 15px;
+      position: sticky;
+      display: flex;
+      z-index: 1000;
+      top: 0;
+      align-items: center;
+      justify-content: space-between;
+      transition: background-color 0.3s;
+  }
+  
+  .header img {
+      height: 40px;
+  }
+  
+  .nav-links {
+      display: flex;
+      justify-content: center;
+      flex-grow: 1;
+  }
+  
+  .headera {
+      color: #1f4874;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+      transition: color 0.3s;
+  }
+  
+  .headera:hover {
+      color: var(--cta-accent);
+  }
+  
+  /* Hamburger menu */
+  .hamburger {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #1f4874;
+  }
+  
+  .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: rgba(255, 255, 255, 0.95);
+      width: 100%;
+      height: 100vh;
+      text-align: center;
+      padding-top: 70px;
+      z-index: 999;
+  }
+  
+  .mobile-nav a {
+      display: block;
+      color: #1f4874;
+      margin: 20px 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+  }
+  
+  /* Hero Section */
+  .hero-overall {
+      background-color: #ebf5f9;
+      padding: 40px 20px 60px;
+      text-align: center;
+  }
+  
+  .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+  }
+  
+  .hero-img {
+      width: 100%;
+      max-width: 800px;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  }
+  
+  /* CTA Button */
+  button {
+      background-color: var(--cta-accent);
+      color: var(--cta-main-text);
+      border: none;
+      border-radius: 30px;
+      padding: 12px 30px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.3s, background-color 0.3s;
+      margin: 15px auto;
+      display: block;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  button:hover {
+      background-color: #ffc825;
+      transform: translateY(-2px);
+  }
+  
+  button:active {
+      transform: translateY(0);
+  }
+  
+  /* Features Section */
+  .features-all {
+      padding: 40px 0;
+      background-color: var(--bg-accent);
+      margin: 40px 0;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      color: #FFF !important;
+  }
+
+.features p,
+.features h2 {
+  color: #FFF !important;
+}
+
+  
+  .features {
+      padding: 20px;
+      background-color: var(--bg-accent);
+      margin-bottom: 30px;
+      color: #FFF !important;
+  }
+  
+  .feature-a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+  }
+  
+  .left1, .right1 {
+      width: 46%;
+      padding: 2%;
+  }
+  
+  .left1 h1, .left1 p {
+      text-align: left;
+  }
+  
+  .right1 img, .left2 img {
+      width: 100%;
+      max-width: 450px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+  }
+  
+  .right1 img:hover, .left2 img:hover {
+      transform: scale(1.02);
+  }
+  
+  /* Pricing Section */
+  .pricing {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+  }
+  
+  .card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 30px;
+      width: 300px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      text-align: center;
+      transition: transform 0.3s;
+  }
+  
+  .card:hover {
+      transform: translateY(-5px);
+  }
+  
+  .card-popular {
+      border: 2px solid var(--cta-accent);
+      position: relative;
+  }
+  
+  .prefered-tag {
+      background-color: var(--cta-accent);
+      color: #000;
+      border-radius: 20px;
+      padding: 5px 15px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+  }
+  
+  .price {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1f4874;
+      margin: 15px 0;
+  }
+  
+  .price span {
+      font-size: 0.9rem;
+      font-weight: 400;
+      display: block;
+      margin-top: 5px;
+      color: #666;
+  }
+  
+  .card ul {
+      list-style: none;
+      padding: 0;
+      margin: 25px 0;
+      text-align: left;
+  }
+  
+  .card ul li {
+      padding: 8px 0;
+      position: relative;
+      padding-left: 25px;
+      font-size: 0.95rem;
+  }
+  
+  .card ul li:before {
+      content: "✓";
+      color: var(--cta-accent);
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+  }
+  
+  /* FAQ Section */
+  .faq-body {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+  }
+  
+  .dropdown {
+      cursor: pointer;
+      padding: 15px 0;
+      margin-bottom: 5px;
+      border-bottom: 1px solid #e0e0e0;
+      display: flex;
+      align-items: center;
+  }
+  
+  .faq-q {
+      margin: 0;
+      font-weight: 600;
+      color: #1f4874;
+      font-size: 1.1rem;
+  }
+  
+  .img-dropdown, .img-unexpand {
+      height: 20px;
+      margin-right: 10px;
+  }
+  
+  .dropdown-content {
+      padding: 0 0 15px 30px;
+      color: #555;
+  }
+  
+  /* Footer */
+  .footer {
+      background-color: #1f4874;
+      padding: 40px 20px 20px;
+      color: #fff;
+  }
+  
+  .footer-container {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+  }
+  
+  .footer-column {
+      flex: 1;
+      min-width: 250px;
+      margin-bottom: 30px;
+      padding: 0 15px;
+  }
+  
+  .footer-column h3 {
+      font-size: 18px;
+      font-weight: normal;
+      color: #fff;
+      margin-bottom: 20px;
+  }
+  
+  .divider {
+      height: 1px;
+      background-color: rgba(255,255,255,0.2);
+      margin-bottom: 20px;
+  }
+  
+  .footer-links {
+      list-style: none;
+      padding: 0;
+  }
+  
+  .footer-links li {
+      margin-bottom: 12px;
+  }
+  
+  .footer-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s;
+  }
+  
+  .footer-links a:hover {
+      color: #fff;
+      text-decoration: underline;
+  }
+  
+  .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 30px auto 0;
+      padding: 20px 15px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      flex-wrap: wrap;
+  }
+  
+  .disclaimera {
+      font-size: 12px;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 10px;
+  }
+  
+  .social-icons {
+      display: flex;
+      gap: 15px;
+  }
+  
+  .social-icon {
+      display: block;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: rgba(255,255,255,0.1);
+      transition: background-color 0.3s;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 20px;
+  }
+  
+  .social-icon:hover {
+      background-color: rgba(255,255,255,0.2);
+  }
+  
+  .discord {
+      background-image: url("https://www.svgrepo.com/show/353655/discord-icon.svg");
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+      .hamburger {
+          display: block;
+      }
+      
+      .nav-links {
+          display: none;
+      }
+      
+      .mobile-nav.active {
+          display: block;
+      }
+      
+      .hero-img {
+          width: 100%;
+      }
+      
+      h1 {
+          font-size: 1.8rem;
+      }
+      
+      .left1, .right1 {
+          width: 100%;
+          padding: 15px 0;
+          text-align: center;
+      }
+      
+      .left1 h1, .left1 p {
+          text-align: center;
+      }
+      
+      .feature-a {
+          flex-direction: column;
+      }
+      
+      .card {
+          width: 100%;
+          max-width: 350px;
+          margin-bottom: 30px;
+      }
+      
+      .footer-container {
+          flex-direction: column;
+      }
+      
+      .footer-column {
+          width: 100%;
+      }
+      
+      .footer-bottom {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+      }
+      
+      .social-icons {
+          margin-top: 15px;
+      }
+  }
+
+  /* Disclaimer styling */
+  disclaimer {
+      font-size: var(--disclaimer-size);
+      vertical-align: super;
+      color: #666;
+  }
+
+  .p2-1 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #1f4874;
+      max-width: 800px;
+      margin: 0 auto 30px;
+  }
+
+  /* New highlight section */
+  .highlight-section {
+      background-color: #1f4874;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      margin: 40px 0;
+  }
+
+  .highlight-section h2 {
+      color: white;
+      font-size: 2rem;
+      margin-bottom: 15px;
+  }
+
+  .highlight-section p {
+      color: white;
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+  }
+
+  .stats-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 30px auto;
+      max-width: 900px;
+  }
+
+  .stat-item {
+      margin: 15px 25px;
+      text-align: center;
+  }
+
+  .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--cta-accent);
+      margin-bottom: 5px;
+  }
+
+  .stat-label {
+      font-size: 1rem;
+      font-weight: 600;
+  }
+
+  .end-hero {
+      background-color: #ebf5f9;
+      padding: 60px 20px;
+      text-align: center;
+      border-radius: 20px 20px 0 0;
+      margin-bottom: -40px;
+  }
+  </style>
+  
+  <script data-cfasync="false" nonce="f52d350b-340d-426a-affa-6c3b597e00cd">try{(function(w,d){!function(j,k,l,m){if(j.zaraz)console.error("zaraz is loaded twice");else{j[l]=j[l]||{};j[l].executed=[];j.zaraz={deferred:[],listeners:[]};j.zaraz._v="5850";j.zaraz._n="f52d350b-340d-426a-affa-6c3b597e00cd";j.zaraz.q=[];j.zaraz._f=function(n){return async function(){var o=Array.prototype.slice.call(arguments);j.zaraz.q.push({m:n,a:o})}};for(const p of["track","set","debug"])j.zaraz[p]=j.zaraz._f(p);j.zaraz.init=()=>{var q=k.getElementsByTagName(m)[0],r=k.createElement(m),s=k.getElementsByTagName("title")[0];s&&(j[l].t=k.getElementsByTagName("title")[0].text);j[l].x=Math.random();j[l].w=j.screen.width;j[l].h=j.screen.height;j[l].j=j.innerHeight;j[l].e=j.innerWidth;j[l].l=j.location.href;j[l].r=k.referrer;j[l].k=j.screen.colorDepth;j[l].n=k.characterSet;j[l].o=(new Date).getTimezoneOffset();if(j.dataLayer)for(const t of Object.entries(Object.entries(dataLayer).reduce(((u,v)=>({...u[1],...v[1]})),{})))zaraz.set(t[0],t[1],{scope:"page"});j[l].q=[];for(;j.zaraz.q.length;){const w=j.zaraz.q.shift();j[l].q.push(w)}r.defer=!0;for(const x of[localStorage,sessionStorage])Object.keys(x||{}).filter((z=>z.startsWith("_zaraz_"))).forEach((y=>{try{j[l]["z_"+y.slice(7)]=JSON.parse(x.getItem(y))}catch{j[l]["z_"+y.slice(7)]=x.getItem(y)}}));r.referrerPolicy="origin";r.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(j[l])));q.parentNode.insertBefore(r,q)};["complete","interactive"].includes(k.readyState)?zaraz.init():j.addEventListener("DOMContentLoaded",zaraz.init)}}(w,d,"zarazData","script");window.zaraz._p=async bs=>new Promise((bt=>{if(bs){bs.e&&bs.e.forEach((bu=>{try{const bv=d.querySelector("script[nonce]"),bw=bv?.nonce||bv?.getAttribute("nonce"),bx=d.createElement("script");bw&&(bx.nonce=bw);bx.innerHTML=bu;bx.onload=()=>{d.head.removeChild(bx)};d.head.appendChild(bx)}catch(by){console.error(`Error executing script: ${bu}\n`,by)}}));Promise.allSettled((bs.f||[]).map((bz=>fetch(bz[0],bz[1]))))}bt()}));zaraz._p({"e":["(function(w,d){})(window,document)"]});})(window,document)}catch(e){throw fetch("/cdn-cgi/zaraz/t"),e;};</script>
+</head>
+
+<body>
+  <div class="header">
+      <img src="https://cdn.contentltd.net/cltd.jpg" alt="ContentLTD Logo">
+      
+      <!-- Hamburger icon for mobile view -->
+      <div class="hamburger" onclick="toggleMenu()">
+        ☰
+      </div>
+      
+      <!-- Desktop Navigation Links -->
+      <div class="nav-links">
+        <a href="./index.html" class="headera">Home</a>
+        <a href="./about.html" class="headera">About</a>
+        <a href="mailto:info@contentltd.net" class="headera">Contact</a>
+        <a href="./servers.html" class="headera">Our Servers</a>
+      </div>
+      
+      <!-- Mobile Navigation Links -->
+      <div class="mobile-nav">
+        <a href="./index.html" class="headera">Home</a>
+        <a href="./about.html" class="headera">About</a>
+        <a href="mailto:info@contentltd.net" class="headera">Contact</a>
+        <a href="./servers.html" class="headera">Our Servers</a>
+      </div>
+  </div>
+    
+  <div class="hero-overall">
+      <div class="container">
+          <h1>CONTENTLTD ANTI-RAID</h1>
+          <div class="hero">
+              <p class="p2-1">The number one ER;LC Server management agency with the best on-market Anti-Raid protection<disclaimer>1</disclaimer></p>
+          </div>
+          <button onclick="location.href='https://discord.gg/MtWakXj9Cm'">Join Us Today</button>
+          <img class="hero-img" src="example-1.png" alt="ContentLTD Server Protection">
+      </div>
+  </div>
+
+  <div class="highlight-section">
+      <div class="container">
+          <h2>1 YEAR. 140+ RAIDERS BLOCKED.</h2>
+          <p>Industry-leading server protection with comprehensive anti-raid features</p>
+          
+          <div class="stats-row">
+              <div class="stat-item">
+                  <div class="stat-number">1</div>
+                  <div class="stat-label">YEAR</div>
+              </div>
+              <div class="stat-item">
+                  <div class="stat-number">140+</div>
+                  <div class="stat-label">BLOCKED RAIDERS</div>
+              </div>
+              <div class="stat-item">
+                  <div class="stat-number">24/7</div>
+                  <div class="stat-label">PROTECTION</div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="container">
+      <div class="p-and-s">
+          <div class="Problem">
+              <h2>What's the problem?</h2>
+              <p>Between Raiding and corruption I cannot tell you which one I've seen more of.</p>
+          </div>
+          <div class="Solution">
+              <h2>How would we solve it?</h2>
+              <p>We provide Management services and Anti-Raid Services to any ER;LC owner who asks.</p>
+          </div>
+      </div>
+  </div>
+
+  <div class="features-all">
+      <div class="features">
+          <div class="feature-a">
+              <div class="left1">
+                  <h2>Our Anti-Raid Bot</h2>
+                  <p>We offer Industry-Leading Anti-Raid services via our "Content Solutions" Bot!<disclaimer>1</disclaimer></p>
+                  <button onclick="scrollToPricing()">Go to Pricing</button>
+              </div>
+              <div class="right1">
+                  <img alt="image of bot profile" src="example-2.png">
+              </div>
+          </div>
+      </div>
+
+      <div class="features">
+          <div class="feature-a">
+              <div class="left2">
+                  <img class="ft2-img" src="example3.png" alt="Banlist screenshot">
+              </div>
+              <div class="right2">
+                  <h2>Our Banlist</h2>
+                  <p class="p-ft2">We have a comprehensive banlist containing more than 140 different discord accounts that are known for being trollers or raiders keeping them out before they even come in!</p>
+                  <button onclick="scrollToPricing()">Go to Pricing</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="container">
+      <h1 id="pricing">Pricing</h1>
+      <div class="pricing">
+          <div class="card card-1">
+              <h2>One Time Payment</h2>
+              <p class="price">$100 / USD <span>(Excluding Tax)</span></p>
+              <ul>
+                  <li>Anti-Raid Bot</li>
+              </ul>
+              <button class="pricing-btn" onclick="location.href='https://discord.gg/MtWakXj9Cm'">Open A Ticket</button>
+              <p class="disclaimer">You are opening a "Pricing" ticket in our Discord Server.</p>
+          </div>
+
+          <div class="card card-popular">
+              <div class="prefered-tag">Preferred</div>
+              <h2>Going under our brand</h2>
+              <p class="price">Free <span>(You must have an "ER;LC" or other roleplay server. Open a ticket for more details.)</span></p>
+              <ul>
+                  <li>Anti-Raid Bot</li>
+                  <li>Advertising Services</li>
+                  <li>Server Management Services</li>
+                  <li>Asset Protection</li>
+              </ul>
+              <button class="pricing-btn" onclick="location.href='https://discord.gg/MtWakXj9Cm'">Open A Ticket</button>
+              <p class="disclaimer">You are opening a "Partnership" ticket in our Discord Server.</p>
+          </div>
+      </div>
+  </div>
+
+  <div class="faq-body">
+      <h1 id="faq">FAQ</h1>
+      <div class="dropdown">
+          <img src="expand-yellow.png" class="img-dropdown" style="display: inline-block;">
+          <img src="unexpand-yellow.png" class="img-unexpand" style="display: none;">
+          <h2 class="faq-q">What ways of payment do you guys take?</h2>
+      </div>
+      <div class="dropdown-content" style="display: none;">
+          <p>We take Paypal and Cashapp for payment.</p>
+      </div>
+
+      <div class="dropdown">
+          <img src="expand-yellow.png" class="img-dropdown" style="display: inline-block;">
+          <img src="unexpand-yellow.png" class="img-unexpand" style="display: none;">
+          <h2 class="faq-q">What is the tax?</h2>
+      </div>
+      <div class="dropdown-content" style="display: none;">
+          <p>7%</p>
+      </div>
+
+      <div class="dropdown">
+          <img src="expand-yellow.png" class="img-dropdown" style="display: inline-block;">
+          <img src="unexpand-yellow.png" class="img-unexpand" style="display: none;">
+          <h2 class="faq-q">If I went under your brand, is it completely free?</h2>
+      </div>
+      <div class="dropdown-content" style="display: none;">
+          <p>Yes! It is completely free for as long as your server is under our brand.</p>
+      </div>
+      <p>This is the end of our FAQ. If you have other questions then please open a ticket <a href="https://discord.gg/MtWakXj9Cm">Here!</a></p>
+  </div>
+  
+  <div class="end-hero">
+      <div class="container">
+          <h1>Anti-Raid for all!</h1>
+          <p class="p2-1">Join us today to help us with our mission of providing the best anti-raid services on the market!</p>
+          <button onclick="location.href='https://discord.gg/MtWakXj9Cm'">Join Us</button>
+      </div>
+  </div>
+
+  <footer class="footer">
+      <div class="footer-container">
+          <div class="footer-column">
+              <h3>Help</h3>
+              <div class="divider"></div>
+              <ul class="footer-links">
+                  <li><a href="mailto:info@contentltd.net">Contact Us</a></li>
+                  <li><a href="./faq.html">FAQs</a></li>
+              </ul>
+          </div>
+          
+          <div class="footer-column">
+              <h3>About ContentLTD</h3>
+              <div class="divider"></div>
+              <ul class="footer-links">
+                  <li><a href="./about.html">About us</a></li>
+                  <li><a href="./redirect/hire.html">We're hiring! Join our team <span class="external-icon"></span></a></li>
+                  <li><a href="./news.html">Newsroom </a></li>
+                  <li><a href="./legal.html">Legal, privacy, copyright</a></li>
+                  <li><a href="./loc.html">Countries We Dont Operate In <span class="external-icon"></span></a></li>
+              </ul>
+          </div>
+          
+          <div class="footer-column">
+              <h3>Extras</h3>
+              <div class="divider"></div>
+              <ul class="footer-links">
+                  <li><a href="./servers.html">Our Servers</a></li>
+              </ul>
+          </div>
+      </div>
+      
+      <div class="footer-bottom">
+          <div class="disclaimera">
+              <span class="external-icon"></span> Link opens in new window. Site may not meet accessibility guidelines. contentltd.net℠
+          </div>
+          <div class="social-icons">
+              <a href="https://discord.gg/MtWakXj9Cm" class="social-icon discord" aria-label="Discord"></a>
+          </div>
+      </div>
+  </footer>
+  
+  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'92a8d2952b5a4bbd',t:'MTc0MzY4NTk5OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+  <script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;92a8d2952b5a4bbd&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;version&quot;:&quot;2025.3.0&quot;,&quot;token&quot;:&quot;d938ef13d5a44397a104dab04be6d8fa&quot;}" crossorigin="anonymous"></script>
+
+
+
+</body></html>

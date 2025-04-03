@@ -1,0 +1,538 @@
+<html lang="en"><head>
+  <link rel="stylesheet" href="default-styles.css">
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Select all dropdown headers
+      const dropdowns = document.querySelectorAll('.dropdown');
+    
+      dropdowns.forEach(dropdown => {
+        dropdown.addEventListener('click', () => {
+          const content = dropdown.nextElementSibling;
+          const imgDropdown = dropdown.querySelector('.img-dropdown');
+          const imgUnexpand = dropdown.querySelector('.img-unexpand');
+    
+          // Toggle the display of the dropdown content
+          if (content.style.display === "block") {
+            content.style.display = "none";
+            imgDropdown.style.display = "inline-block";
+            imgUnexpand.style.display = "none";
+          } else {
+            content.style.display = "block";
+            imgDropdown.style.display = "none";
+            imgUnexpand.style.display = "inline-block";
+          }
+        });
+    
+        // Ensure initial state
+        const content = dropdown.nextElementSibling;
+        const imgDropdown = dropdown.querySelector('.img-dropdown');
+        const imgUnexpand = dropdown.querySelector('.img-unexpand');
+    
+        if (content.style.display === "block") {
+          imgDropdown.style.display = "none";
+          imgUnexpand.style.display = "inline-block";
+        } else {
+          imgDropdown.style.display = "inline-block";
+          imgUnexpand.style.display = "none";
+        }
+      });
+    });
+    
+    
+        document.addEventListener("DOMContentLoaded", function() {
+          const header = document.querySelector('.header');
+          const featuresAll = document.querySelector('.features-all');
+        
+          // Set up the IntersectionObserver
+          const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                // The header has passed over the features-all section, apply styles
+                header.classList.add('white-bg');
+                console.log("Header has passed over features-all");
+              } else {
+                // The header is not over the features-all section, remove styles
+                header.classList.remove('white-bg');
+                console.log("Header is not over features-all");
+              }
+            });
+          }, {
+            // Set up the observer to track when .features-all is in the viewport
+            threshold: 0.01 // This means the whole .features-all element has to be in view
+          });
+        
+          // Start observing the .features-all element
+          observer.observe(featuresAll);
+        });
+        
+        function toggleMenu() {
+          const mobileNav = document.querySelector('.mobile-nav');
+          mobileNav.classList.toggle('active'); // Toggle the 'active' class to show/hide the menu
+        }
+        
+        
+            </script>
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+        .dropdown-content {
+          display: none;
+          padding: 10px;
+          background-color: #1d1d1d;
+          margin-top: 5px;
+        }
+        .dropdown {
+          cursor: pointer;
+          font-weight: bold;
+          padding: 10px;
+          background-color: #1d1d1d;
+          margin-bottom: 5px;
+        }
+      </style>
+          <link rel="stylesheet" href="default-styles.css">
+        <style>
+    
+            /* Default Header Style */
+    
+    .header {
+      height: 45px;
+      background: #000;
+      padding: 15px;
+      position: sticky;
+      display: flex;
+      z-index: 1000;
+      top: 0px;
+      align-items: center;
+      justify-content: space-between;
+      transition: background-color 1s, color 1s;
+    }
+    
+    .headera {
+      color: white; /* White text by default */
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    
+    /* New Styles for when the header scrolls over features-all */
+    .header.white-bg {
+      background-color: var(--light-mode-header); /* Use the --light-mode-header variable */
+      color: black; /* Black text when header is in white-bg state */
+    }
+    
+    .header.white-bg .headera {
+      color: black;
+      text-decoration: underline; /* Black underline for links */
+    }
+    
+    
+    .header img {
+      height: 100%;
+    }
+    
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      flex-grow: 1;
+    }
+    
+    .headera {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    
+    /* Hamburger menu (mobile) */
+    .hamburger {
+      display: none; /* Hidden by default */
+      font-size: 30px;
+      cursor: pointer;
+    }
+    
+    /* Mobile Navigation Links (hidden by default) */
+    .mobile-nav {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba(171, 171, 171, 0.9);
+      width: 100%;
+      height: 100vh;
+      text-align: center;
+      padding-top: 50px;
+    }
+    
+    .mobile-nav a {
+      display: block;
+      color: black;
+      margin: 20px 0;
+      text-decoration: none;
+    }
+    
+            :root {
+        --light-mode-header: rgba(102, 102, 102, 0.5);
+        --main-bg: #1d1d1d;
+        --bg-accent: #000;
+        --text-main: #fff;
+        --cta-accent: #FFBB00;
+        --accent-var1: #FFBB00;
+        --cta-main-text: #000;
+        --heading-font: "Open Sans Light", sans-serif;
+        --main-font: "Open Sans", sans-serif;
+        --heading-font-weight: 300;
+        --main-font-weight: 400;
+        --heading-font-size: 2.5em;
+        --main-font-size: 1.2em;
+        --default-align: center;
+        --default-padding: 10px;
+        --default-align-left: left;
+        --default-align-right: right;
+        --text-size-secondary: 1em;
+        --disclaimer-size: 0.5em;
+        --text-size-smaller: 0.75em;
+        --text-size-smallest-readable: 0.60em;
+        --policy-padding: 8.0875em;
+    }
+    
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+    
+    .pp-body{
+      padding: var(--policy-padding);
+    }
+    ::marker {
+        content: "■ "; /* Unicode square with a space */
+        color: #CCCACA;
+        font-size: 1em;
+    }
+    
+    li {
+        list-style-type: none; /* Remove default markers */
+    }
+    
+    
+    table {
+        width: 100%;
+                border-collapse: collapse;
+        background-color: #1a1a1a;
+        border-radius: 10px;
+    }
+    .des {
+        background-color: #111;
+        color: white;
+        border-radius: 10px;
+    }
+    
+    .even {
+        background-color: #333;
+        color: white;
+    }
+    
+    body {
+                background-color: #1d1d1d;
+                color: white;
+                font-family: Open Sans, sans-serif;
+                margin: 0;
+                min-width: 320px;
+                overflow-x: hidden;
+                z-index: 0; /* Keeps it above other content */
+    
+            }
+            
+            body a {
+                color: #fff;
+            }
+            
+            
+    
+            h1 {
+        font-family: var(--heading-font);
+        font-weight: 100;
+        font-size: var(--heading-font-size);
+        color: var(--text-main);
+        text-align: var(--default-align);
+        font-variation-settings: "wght" 100;
+            }
+            h2 {
+        font-family: var(--heading-font);
+        font-weight: 100;
+        color: var(--cta-accent);
+        font-variation-settings: "wght" 100;
+            }
+      a {
+        font-family: var(--main-font);
+        font-weight: var(--main-font-weight);
+        font-size: var(--main-font-size);
+        color: var(--text-main);
+        text-align: var(--default-align);
+        padding: var(--default-padding);
+    }
+    
+    a:hover {
+        font-family: var(--main-font);
+        font-weight: var(--main-font-weight);
+        font-size: var(--main-font-size);
+        color: var(--cta-accent);
+        text-align: var(--default-align);
+        padding: var(--default-padding);
+    }
+    
+    p {
+        font-family: var(--main-font);
+        font-weight: var(--main-font-weight);
+        font-size: var(--main-font-size);
+        color: var(--text-main);
+        text-align: var(--default-align);
+        padding: var(--default-padding);
+        
+    }
+    
+    .img-dropdown, .img-unexpand {
+        height: 2rem;
+        line-height: 1;
+        margin-right: 4px;
+        position: relative;
+        top: 2px;
+    
+    }
+    
+    .dd-head, .img-dropdown, .img-unexpand{
+      display: inline-block;
+    }
+        </style>
+    </head><body>
+    
+      <div class="header">
+        <img src="https://cdn.contentltd.net/cltd.jpg" alt="Logo">
+        
+        <!-- Hamburger icon for mobile view -->
+        <div class="hamburger" onclick="toggleMenu()">
+          &#9776; <!-- This is the hamburger icon -->
+        </div>
+        
+        <!-- Desktop Navigation Links (visible on larger screens) -->
+        <div class="nav-links">
+          <a href="./index.html" class="headera">Home</a>
+          <a href="./about.html" class="headera">About</a>
+          <a href="mailto:info@contentltd.net" class="headera">Contact</a>
+          <a href="./servers.html" class="headera">Our Servers</a>
+        </div>
+        
+        <!-- Mobile Navigation Links (hidden by default, shown when hamburger clicked) -->
+        <div class="mobile-nav">
+          <a href="./index.html" class="headera">Home</a>
+          <a href="./about.html" class="headera">About</a>
+          <a href="mailto:info@contentltd.net" class="headera">Contact</a>
+          <a href="./servers.html" class="headera">Our Servers</a>
+        </div>
+      </div>
+          <div class="pp-body">
+        <h1>Why There Are Countries We Don’t Operate In</h1>
+    
+        <ul>
+            <li><a href="#why-we-dont-operate">Why We Don’t Operate in Certain Countries</a></li>
+            <li><a href="#why-avoid-discord-roblox-github-restricted-countries">Why We Don’t Operate in Countries That Discord, Roblox, and GitHub Don’t Operate In</a></li>
+            <li><a href="#countries-we-dont-operate-in">The Countries We Don’t Operate In</a></li>
+            <li><a href="#conclusion">Conclusion</a></li>
+        </ul>
+    
+        <div id="why-we-dont-operate" class="dropdown">
+            <img src="expand-yellow.png" class="img-dropdown" style="display: inline-block;">
+            <img src="unexpand-yellow.png" class="img-unexpand" style="display: none;">
+            <h2 id="why-we-dont-operate" class="dd-head">Why We Don’t Operate in Certain Countries</h2>
+        </div>
+        <div class="dropdown-content" style="display: none;">
+            <p>The decision to refrain from operating in certain countries is not made lightly. We rely heavily on several third-party services, tools, and platforms to deliver our services, such as Discord, Roblox, and GitHub. These platforms are integral to CLTD's infrastructure and operations, whether it’s for communication, collaboration, version control, or content sharing.</p>
+    
+            <p>Many of these third-party platforms also face restrictions or have outright bans in some countries due to factors ranging from political issues to international sanctions. As a result, we must align our operations with these third-party services and avoid entering regions where these services themselves are not available or are heavily restricted.</p>
+    
+            <h3>Here’s why we avoid countries that Discord, Roblox, and GitHub don’t operate in:</h3>
+            <ul>
+                <li><strong>Legal and Regulatory Compliance:</strong> Operating in certain countries could expose CLTD to legal risks that may arise from local regulations, which can often be contradictory to international standards or the platform’s operational guidelines. Countries with authoritarian regimes or areas under international sanctions typically have laws that conflict with international data protection laws and intellectual property rights.</li>
+                <li><strong>Reliance on Third-Party Services:</strong> CLTD relies on platforms like Discord, GitHub, and Roblox for crucial services, and our ability to continue using these platforms is often tied to their own global operations. If these platforms are restricted or blocked in certain countries, it becomes challenging for us to offer consistent and secure services to our users in those regions.</li>
+                <li><strong>International Sanctions and Restrictions:</strong> Several countries face trade sanctions or restrictions imposed by governments such as the United States, the European Union, or other international bodies. These sanctions can prohibit the flow of goods, services, or technology into and out of these regions, making it illegal or impractical for us to operate there. As a result, we respect the global trade frameworks and comply with international sanctions to avoid legal consequences and ensure our operations are ethical and lawful.</li>
+                <li><strong>Security Concerns:</strong> In some countries, there are concerns about cybersecurity, data privacy, and surveillance. These risks could compromise the security of our platform and our users’ personal information. Countries that are known for inadequate data protection laws or higher rates of cybercrime pose a significant risk to the security and privacy of CLTD’s users.</li>
+                <li><strong>Ethical and Social Responsibility:</strong> Beyond the legal considerations, there are ethical concerns when operating in certain regions. Countries with histories of human rights violations, censorship, or political instability may pose significant challenges to maintaining a responsible business model. CLTD does not wish to contribute to environments where its services may be used in ways that contradict our values of openness, fairness, and user empowerment.</li>
+            </ul>
+        </div>
+    
+        <div id="why-avoid-discord-roblox-github-restricted-countries" class="dropdown">
+            <img src="expand-yellow.png" class="img-dropdown" style="display: inline-block;">
+            <img src="unexpand-yellow.png" class="img-unexpand" style="display: none;">
+            <h2 id="why-avoid-discord-roblox-github-restricted-countries" class="dd-head">Why We Don’t Operate in Countries That Our Partners Don’t Operate In</h2>
+        </div>
+        <div class="dropdown-content" style="display: none;">
+            <p>At CLTD, our decision to refrain from operating in certain countries is rooted in the need to comply with international laws, maintain security, and preserve the integrity of our platform. We rely on platforms like Discord, GitHub, and Roblox to deliver our services, and by respecting the operational boundaries of these services, we ensure that we continue to offer reliable, secure, and ethical services to our global user base. We understand that operating globally comes with complex challenges, but we are committed to navigating these challenges responsibly.</p>
+    
+            <p>By aligning our operations with best practices in the industry, and in harmony with the platforms that power our business, we ensure that CLTD continues to be a trusted, responsible, and secure platform for our users around the world.</p>
+        </div>
+    
+        <div id="countries-we-dont-operate-in" class="dropdown">
+            <img src="expand-yellow.png" class="img-dropdown" style="display: inline-block;">
+            <img src="unexpand-yellow.png" class="img-unexpand" style="display: none;">
+            <h2 id="countries-we-dont-operate-in" class="dd-head">The Countries We Don’t Operate In</h2>
+        </div>
+        <div class="dropdown-content" style="display: none;">
+            <p>To maintain the integrity of our business and services, and to comply with the aforementioned concerns, CLTD follows a policy of not operating in countries where platforms like Discord, GitHub, and Roblox are restricted or banned. Below is a list of the countries we currently avoid:</p>
+    
+            <ul>
+                <li><strong>China:</strong> Known for strict internet censorship and control over foreign services.</li>
+                <li><strong>Iran:</strong> Faces heavy international sanctions which restrict access to many online services.</li>
+                <li><strong>North Korea:</strong> An isolated state with extensive restrictions on the internet and foreign technologies.</li>
+                <li><strong>Sudan:</strong> A country under international sanctions and political instability.</li>
+                <li><strong>Syrian Arab Republic:</strong> Under U.S. sanctions, making it illegal for many companies to operate there.</li>
+                <li><strong>Crimea Region (Ukraine):</strong> A disputed territory under international sanctions.</li>
+                <li><strong>Belarus:</strong> Some restrictions, especially regarding online activities and platforms.</li>
+                <li><strong>Afghanistan:</strong> Political instability and security concerns that make operating there difficult.</li>
+            </ul>
+        </div>
+    
+        <div id="conclusion" class="dropdown">
+            <img src="expand-yellow.png" class="img-dropdown" style="display: inline-block;">
+            <img src="unexpand-yellow.png" class="img-unexpand" style="display: none;">
+            <h2 id="conclusion" class="dd-head">Conclusion</h2>
+        </div>
+        <div class="dropdown-content" style="display: none;">
+            <p>At CLTD, our decision to refrain from operating in certain countries is not made lightly. We are committed to providing secure, reliable, and ethical services, which is why we align our operations with best practices in the industry and ensure compliance with international regulations. By doing so, we protect both our users and our business from the risks associated with operating in countries with restrictive or problematic environments. We remain dedicated to delivering the best possible experience to our users in countries where we can operate safely and ethically.</p>
+        </div>
+      </div>
+    
+      <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Help</h3>
+                <div class="divider"></div>
+                <ul class="footer-links">
+                    <li><a href="mailto:info@contentltd.net">Contact Us</a></li>
+                    <li><a href="./faq.html">FAQs</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>About ContentLTD</h3>
+                <div class="divider"></div>
+                <ul class="footer-links">
+                    <li><a href="./about.html">About us</a></li>
+                    <li><a href="./redirect/hire.html">We're hiring! Join our team <span class="external-icon"></span></a></li>
+                    <li><a href="./news.html">Newsroom </a></li>
+                    <li><a href="./legal.html">Legal, privacy, copyright</a></li>
+                    <li><a href="./loc.html">Countries We Dont Operate In <span class="external-icon"></span></a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Extras</h3>
+                <div class="divider"></div>
+                <ul class="footer-links">
+                    <li><a href="./servers.html">Our Servers</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="disclaimera">
+                <span class="external-icon"></span> Link opens in new window. Site may not meet accessibility guidelines. contentltd.net&#8480;
+            </div>
+            <div class="social-icons">
+                <a href="https://discord.gg/MtWakXj9Cm" class="social-icon discord" aria-label="Discord"></a>
+            </div>
+        </div>
+      </footer>
+      
+      <style>
+      
+      .footer { background-color: #e6eaee; padding: 40px 20px 20px; color: #333; } 
+      .footer-container { 
+        display: flex; 
+        justify-content: space-between; 
+        max-width: 1200px; 
+        margin: 0 auto; 
+        flex-wrap: wrap; 
+      } 
+      .footer-column { 
+        flex: 1; 
+        min-width: 250px; 
+        margin-bottom: 30px; 
+        padding: 0 15px; 
+      } 
+      
+      .footer-column h3 { 
+        font-size: 18px; 
+        font-weight: normal; 
+        color: #444; 
+        margin-bottom: 10px; 
+      } 
+      .divider { 
+        height: 1px; 
+        background-color: #bbc4d1; 
+        margin-bottom: 15px; 
+      } 
+      .footer-links { 
+        list-style: none; 
+      } 
+      .footer-links li { 
+        margin-bottom: 12px; 
+      } 
+      .footer-links a { 
+        color: #333; text-decoration: none; font-size: 14px; 
+      } 
+      .footer-links a:hover { 
+        text-decoration: underline; 
+      } 
+      .external-icon { 
+        display: inline-block; 
+        width: 12px; 
+        height: 12px; 
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpolyline points='15 3 21 3 21 9'%3E%3C/polyline%3E%3Cline x1='10' y1='14' x2='21' y2='3'%3E%3C/line%3E%3C/svg%3E"); 
+        background-size: contain; 
+        background-repeat: no-repeat; 
+        margin-left: 4px; position: relative; top: 1px; 
+      } 
+      .footer-bottom { 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        max-width: 1200px; 
+        margin: 20px auto 0; 
+        padding: 15px; 
+        flex-wrap: wrap; 
+      } 
+      .disclaimera { 
+        font-size: 12px; 
+        color: #555; 
+        margin-right: 20px; 
+        margin-bottom: 10px; 
+      } 
+      .social-icons { 
+        display: flex; 
+        gap: 10px; 
+      } 
+      .social-icon { 
+        display: block; 
+        width: 36px;
+        height: 36px; 
+        border-radius: 50%; 
+        background-color: #fff; 
+        border: 1px solid #ccc; 
+        background-position: center; 
+        background-repeat: no-repeat; 
+        background-size: 20px; 
+      } 
+      .facebook { 
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233b5998'%3E%3Cpath d='M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z'%3E%3C/path%3E%3C/svg%3E"); 
+      } .youtube { 
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff0000'%3E%3Cpath d='M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z'%3E%3C/path%3E%3Cpolygon fill='white' points='9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02'%3E%3C/polygon%3E%3C/svg%3E"); 
+      } 
+      .discord {
+        background-image: url("https://www.svgrepo.com/show/353655/discord-icon.svg");
+      }
+      .twitter { 
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231da1f2'%3E%3Cpath d='M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z'%3E%3C/path%3E%3C/svg%3E"); 
+      } /* Responsive adjustments 
+      */ @media (max-width: 768px) { 
+        .footer-container { flex-direction: column; } 
+        .footer-column { width: 100%; margin-bottom: 30px; } 
+        .footer-bottom { flex-direction: column; align-items: flex-start; } 
+        .social-icons { margin-top: 15px; } 
+      
+      }
+      
+        </style>
+    </body></html>

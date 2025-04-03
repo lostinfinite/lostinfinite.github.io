@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsroom Coming Soon</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+:root {
+    --light-mode-header: rgba(102, 102, 102, 0.5);
+    --main-bg: #1d1d1d;
+    --bg-accent: #000;
+    --text-main: #fff;
+    --cta-accent: #FFBB00;
+    --accent-var1: #FFBB00;
+    --cta-main-text: #000;
+    --heading-font: "Open Sans", sans-serif;
+    --main-font: "Open Sans", sans-serif;
+    --heading-font-weight: 300;
+    --main-font-weight: 400;
+    --heading-font-size: 2.5em;
+    --main-font-size: 1.2em;
+    --default-align: center;
+    --default-padding: 10px;
+    --default-align-left: left;
+    --default-align-right: right;
+    --text-size-secondary: 1em;
+    --disclaimer-size: 0.5em;
+    --text-size-smaller: 0.75em;
+    --text-size-smallest-readable: 0.60em;
+}
+        body {
+            background-color: var(--main-bg);
+            color: var(--text-main);
+            font-family: var(--main-font);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            background-color: var(--bg-accent);
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            width: 60%;
+            max-width: 600px;
+        }
+
+        h1 {
+            font-family: var(--heading-font);
+            font-weight: var(--heading-font-weight);
+            font-size: var(--heading-font-size);
+            color: var(--text-main);
+        }
+
+        p {
+            font-family: var(--main-font);
+            font-weight: var(--main-font-weight);
+            font-size: var(--main-font-size);
+            color: var(--text-main);
+            margin: 20px 0;
+        }
+
+        a {
+            color: var(--cta-accent);
+            text-decoration: none;
+            font-weight: var(--main-font-weight);
+            font-size: var(--main-font-size);
+        }
+
+        a:hover {
+            color: var(--cta-main-text);
+            text-decoration: underline;
+        }
+
+        .logo {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="https://cdn.contentltd.net/cltd.jpg" alt="ContentLTD Logo" class="logo">
+    <h1>Newsroom Coming Soon</h1>
+    <p>We're working on it. Stay tuned for updates.</p>
+    <p><a href="./index.html">Back to homepage</a></p>
+</div>
+
+</body>
+</html>
