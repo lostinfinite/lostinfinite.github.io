@@ -105,31 +105,6 @@
   </script>
 
   <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const header = document.querySelector('.header');
-    const featuresAll = document.querySelector('.features-all');
-
-    // Set up the IntersectionObserver
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // The header has passed over the features-all section, apply styles
-          header.classList.add('white-bg');
-          console.log("Header has passed over features-all");
-        } else {
-          // The header is not over the features-all section, remove styles
-          header.classList.remove('white-bg');
-          console.log("Header is not over features-all");
-        }
-      });
-    }, {
-      // Set up the observer to track when .features-all is in the viewport
-      threshold: 0.01 // This means the whole .features-all element has to be in view
-    });
-
-    // Start observing the .features-all element
-    observer.observe(featuresAll);
-  });
 
 
 
